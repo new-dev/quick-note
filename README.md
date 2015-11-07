@@ -1,0 +1,2 @@
+# quick-note
+Chrome plugin
