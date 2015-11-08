@@ -4,27 +4,24 @@
 
 var app = angular.module('app', []);
 
-app.controller('appCtrl', function($scope){
-
+app.controller('appCtrl', function($scope, $q){
 
   getCurrentTabUrl(function(url) {
-
     document.getElementById("note-area").focus();
 
-    var doodleJump = function(data) {
-      $scope.noteList = data;
-    };
-
-    $scope.loadNotes = function(callback) {
-        chrome.storage.sync.get(function(storedNotes) {
+    $scope.loadNotes = function() {
+      var deferred = $q.defer();
+      chrome.storage.sync.get(function(storedNotes) {
           if (!chrome.runtime.error) {
-             console.log(storedNotes["data"]);
-            callback(storedNotes["data"]);
+            //console.log(storedNotes.data);
+            //callback(storedNotes.data);
+            deferred.resolve(storedNotes.data);
             //$scope.noteList = storedNotes["data"];
             //https://www.google.com/
             //chrome.tabs.update({url: "https://www.google.com/"});
           }
-        })
+        });
+      return deferred.promise;
     };
 
     //$scope.noteList = loadNotes();
@@ -35,7 +32,7 @@ app.controller('appCtrl', function($scope){
     };
 
     $scope.viewAll = function() {
-      //chrome.storage.sync.get(function(storedNotes) {
+      //chrome.storage.sync.get(function(storedNotes){
       //  if (!chrome.runtime.error) {
       //    //console.log(storedNotes["data"]);
       //    console.log($scope.noteList);
@@ -44,8 +41,11 @@ app.controller('appCtrl', function($scope){
       //    //https://www.google.com/
       //    //chrome.tabs.update({url: "https://www.google.com/"});
       //  }
-      //})
-      $scope.loadNotes(doodleJump());
+      //});
+      $scope.loadNotes().then(function(data) {
+        $scope.noteList = data;
+        console.log($scope.noteList);
+      });
       displayNoteList();
     };
 
