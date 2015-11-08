@@ -11,12 +11,12 @@ app.controller('appCtrl', function($scope){
 
     document.getElementById("note-area").focus();
 
-    document.getElementById("cancel-button").onclick = function() {
+    $scope.cancel = function() {
       console.log("clicked the button");
       chrome.storage.sync.clear(function(storedNotes) {});
     };
 
-    document.getElementById("all-button").onclick = function() {
+    $scope.viewAll = function() {
       chrome.storage.sync.get(function(storedNotes) {
         if (!chrome.runtime.error) {
           console.log(storedNotes["data"]);
@@ -27,7 +27,7 @@ app.controller('appCtrl', function($scope){
       })
     };
 
-    document.getElementById("save-button").onclick = function() {
+    $scope.saveNote = function() {
       var noteText = document.getElementById("note-area").innerText;
       var currentDate = getCurrentDate();
 
