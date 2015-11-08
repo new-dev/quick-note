@@ -5,6 +5,7 @@ body {
     /*-webkit-font-smoothing: subpixel-antialiased;*/
     font-size: 100%;
     word-wrap: break-word;
+    min-width: 400px;
 }
 #note-div {
     /* avoid an excessively wide status text */
