@@ -4,15 +4,17 @@
 
 document.addEventListener('DOMContentLoaded', function() {
 
+  document.getElementById("note-area").focus();
+
   getCurrentTabUrl(function(url) {
 
     document.getElementById("cancel-button").onclick = function() {
       console.log("clicked the button");
-      chrome.storage.local.clear(function(storedNotes) {});
+      chrome.storage.sync.clear(function(storedNotes) {});
     };
 
     document.getElementById("all-button").onclick = function() {
-      chrome.storage.local.get(function(storedNotes) {
+      chrome.storage.sync.get(function(storedNotes) {
         if (!chrome.runtime.error) {
           console.log(storedNotes["data"]);
         }
@@ -29,18 +31,18 @@ document.addEventListener('DOMContentLoaded', function() {
         date: currentDate
       };
 
-      chrome.storage.local.get(function(storedNotes) {
+      chrome.storage.sync.get(function(storedNotes) {
         if(typeof(storedNotes["data"]) !== 'undefined' && storedNotes["data"] instanceof Array) {
           storedNotes["data"].push(newNoteData);
         } else {
           storedNotes["data"] = [newNoteData];
         }
-        chrome.storage.local.set(storedNotes, function() {
+        chrome.storage.sync.set(storedNotes, function() {
           if (chrome.runtime.error) {
             console.log("RuntimeError.");
           }
         });
-        window.close();
+        //window.close();
       });
     };
   });
