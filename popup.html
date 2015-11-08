@@ -65,9 +65,6 @@
             opacity: .9;
             border-color: transparent;
         }
-        [contentEditable=true]:empty:not(:focus):before{
-            content:attr(data-text)
-        }
 
     </style>
     <script src="angular.min.js"></script>
@@ -76,7 +73,7 @@
 <body ng-controller="appCtrl">
 <span id="new-note">
     <div id="note-div">
-        <div contentEditable=true data-text="Enter text here" id="note-area">
+        <div contentEditable=true id="note-area">
         </div>
       <div id="buttons">
         <button id="all-button" class="btn btn-primary pull-left" data-ng-click="viewAll()">View All</button>
