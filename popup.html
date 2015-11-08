@@ -21,8 +21,9 @@
             width: 400px;
         }
         #note-area {
-            font: normal 17px/2.0 "Lucida Grande", arial, sans-serif;
-            padding: 0 15px 0 15px;
+            font-size: 17px;
+            line-height: 1.7;
+            padding: 2px 15px 0 15px;
             border: none;
             margin-bottom: 20px;
             outline: none;
@@ -44,14 +45,20 @@
         }
 
         #buttons {
-            /*position: absolute;*/
+            margin-top: 20px;
+            margin-bottom: 20px;
+            padding: 10px 15px 10px 15px;
+            text-align: center;
         }
 
         .display-nothing {
             display: none;
         }
-
-
+        .btn {
+            border-radius: 1px;
+            width: 90px;
+            text-align: center;
+        }
     </style>
     <script src="popup.js"></script>
 </head>
@@ -63,11 +70,11 @@
             <article contenteditable="true" id="note-area">
             </article>
         </section>
-      <span id="buttons">
-        <button id="all-button" class="btn btn-sm btn-primary pull-left">View All</button>
-        <button id="cancel-button" class="btn btn-sm btn-danger text-center">Cancel</button>
-        <button id="save-button" class="btn btn-sm btn-success pull-right">Save</button>
-      </span>
+      <div id="buttons">
+        <button id="all-button" class="btn btn-primary pull-left">View All</button>
+        <button id="cancel-button" class="btn btn-danger text-center">Cancel</button>
+        <button id="save-button" class="btn btn-success pull-right">Save</button>
+      </div>
     </div>
       </span>
   <span id="note-list" class="display-nothing">
