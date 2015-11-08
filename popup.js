@@ -4,9 +4,9 @@
 
 document.addEventListener('DOMContentLoaded', function() {
 
-  document.getElementById("note-area").focus();
-
   getCurrentTabUrl(function(url) {
+
+    document.getElementById("note-area").focus();
 
     document.getElementById("cancel-button").onclick = function() {
       console.log("clicked the button");
