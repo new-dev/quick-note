@@ -48,7 +48,7 @@ app.controller('appCtrl', function($scope, $q){
 
       chrome.storage.sync.get(function(storedNotes) {
         if(typeof(storedNotes["data"]) !== 'undefined' && storedNotes["data"] instanceof Array) {
-          storedNotes["data"].push(newNoteData);
+          storedNotes["data"].unshift(newNoteData);
         } else {
           storedNotes["data"] = [newNoteData];
         }
