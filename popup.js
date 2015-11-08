@@ -87,12 +87,25 @@ app.controller('appCtrl', function($scope, $q){
           }
         });
       });
-      $scope.noteList.splice(index, 1);
+      return $scope.noteList.splice(index, 1);
     };
 
     $scope.editNote = function(index) {
+      var editedNoteData = $scope.deleteNote(index);
 
-    }
+      chrome.storage.sync.get(function(storedNotes) {
+        if(typeof(storedNotes.data) !== 'undefined' && storedNotes.data instanceof Array) {
+          storedNotes.data.unshift(editedNoteData);
+        } else {
+          storedNotes.data = [editedNoteData];
+        }
+        chrome.storage.sync.set(storedNotes, function() {
+          if (chrome.runtime.error) {
+            console.log("RuntimeError.");
+          }
+        });
+      });
+    };
 
   });
 });
