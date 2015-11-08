@@ -4,7 +4,7 @@
  "browser_action" field in manifest.json contains the "default_popup" key with
  value "popup.html".
  -->
-<html>
+<html data-ng-app="app">
 <head>
     <title>Quik Note</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
@@ -73,15 +73,15 @@
     <script src="angular.min.js"></script>
     <script src="popup.js"></script>
 </head>
-<body ng-app>
+<body ng-controller="appCtrl">
 <span id="new-note">
     <div id="note-div">
         <div contentEditable=true data-text="Enter text here" id="note-area">
         </div>
       <div id="buttons">
-        <button id="all-button" class="btn btn-primary pull-left" ng-click="viewAll()">View All</button>
-        <button id="cancel-button" class="btn btn-danger text-center" ng-click="cancel()">Cancel</button>
-        <button id="save-button" class="btn btn-success pull-right"ng-click="saveNote()">Save</button>
+        <button id="all-button" class="btn btn-primary pull-left" data-ng-click="viewAll()">View All</button>
+        <button id="cancel-button" class="btn btn-danger text-center" data-ng-click="cancel()">Cancel</button>
+        <button id="save-button" class="btn btn-success pull-right" data-ng-click="saveNote()">Save</button>
       </div>
     </div>
       </span>
