@@ -9,22 +9,19 @@ app.controller('appCtrl', function($scope, $q){
   getCurrentTabUrl(function(url) {
     document.getElementById("note-area").focus();
 
+    $scope.loadUrl = function(url) {
+      chrome.tabs.update({url: url});
+    };
+
     $scope.loadNotes = function() {
       var deferred = $q.defer();
       chrome.storage.sync.get(function(storedNotes) {
           if (!chrome.runtime.error) {
-            //console.log(storedNotes.data);
-            //callback(storedNotes.data);
             deferred.resolve(storedNotes.data);
-            //$scope.noteList = storedNotes["data"];
-            //https://www.google.com/
-            //chrome.tabs.update({url: "https://www.google.com/"});
           }
         });
       return deferred.promise;
     };
-
-    //$scope.noteList = loadNotes();
 
     $scope.cancel = function() {
       console.log("clicked the button");
@@ -32,16 +29,6 @@ app.controller('appCtrl', function($scope, $q){
     };
 
     $scope.viewAll = function() {
-      //chrome.storage.sync.get(function(storedNotes){
-      //  if (!chrome.runtime.error) {
-      //    //console.log(storedNotes["data"]);
-      //    console.log($scope.noteList);
-      //
-      //    //displayNoteList();
-      //    //https://www.google.com/
-      //    //chrome.tabs.update({url: "https://www.google.com/"});
-      //  }
-      //});
       $scope.loadNotes().then(function(data) {
         $scope.noteList = data;
         console.log($scope.noteList);
