@@ -19,8 +19,6 @@ app.controller('appCtrl', function($scope, $q){
     this.enableEdit = false;
   };
 
-  $scope.editText = "";
-
   getCurrentTabUrl(function(url) {
     document.getElementById("note-area").focus();
 
@@ -96,21 +94,26 @@ app.controller('appCtrl', function($scope, $q){
       console.log("edited note");
       var editedNoteData = $scope.deleteNote(index);
       console.log(editedNoteData);
-      editedNoteData[0].noteText = document.getElementsByClassName("hoverEdit");
+      console.log(editedNoteData[0]);
+      editedNoteData[0].noteText = document.getElementById("text"+index).innerText;
 
+      document.getElementById("text"+index).innerText = editedNoteData[0].noteText;
+      $scope.noteList.unshift(editedNoteData[0]);
+
+      console.log(document.getElementById("text"+index).innerText);
       chrome.storage.sync.get(function(storedNotes) {
-        if(typeof(storedNotes.data) !== 'undefined' && storedNotes.data instanceof Array) {
-          storedNotes.data.unshift(editedNoteData);
-        } else {
-          storedNotes.data = [editedNoteData];
-        }
+        storedNotes.data = $scope.noteList;
         chrome.storage.sync.set(storedNotes, function() {
           if (chrome.runtime.error) {
             console.log("RuntimeError.");
           }
         });
       });
-      $scope.unshift(editedNoteData);
+    };
+
+    $scope.focusOnEdit = function(index) {
+      console.log("focus");
+      document.getElementById("text"+index).focus();
     };
 
   });
