@@ -80,6 +80,7 @@ document.addEventListener('DOMContentLoaded', function() {
       url: "",
       date: ""
     };
+
     chrome.storage.local.get(function(storedNotes) {
       if(typeof(storedNotes["data"]) !== 'undefined' && storedNotes["data"] instanceof Array) {
         storedNotes["data"].push(newNoteData);
