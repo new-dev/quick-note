@@ -6,12 +6,12 @@
  -->
 <html>
   <head>
-    <title>Getting Started Extension's Popup</title>
+    <title>Quik Note</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
     <style>
-      body {/*
+      body {
         font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
-        font-size: 100%;*/
+        font-size: 100%;
       }
       #note-div {
         /* avoid an excessively wide status text */
@@ -26,15 +26,80 @@
         outline: none;
       }
 
+      .paper {
+        font: normal 20px/2.8 "Lucida Grande", arial, sans-serif;
+/*        width: 50%;
+        height: 80%;*/
+        /*margin: 0 auto;*/
+        padding: 9px 5px 4px 42px;
+        position: relative;
+        color: #444;
+        line-height: 32px;
+        border: 1px solid #d2d2d2;
+        background: #fff;
+        background: -webkit-gradient(linear, 0 0, 0 100%, from(#d9eaf3), color-stop(4%, #fff)) 0 4px;
+        background: -webkit-linear-gradient(top, #d9eaf3 0%, #fff 8%) 0 4px;
+        background: -moz-linear-gradient(top, #d9eaf3 0%, #fff 8%) 0 4px;
+        background: -ms-linear-gradient(top, #d9eaf3 0%, #fff 8%) 0 4px;
+        background: -o-linear-gradient(top, #d9eaf3 0%, #fff 8%) 0 4px;
+        background: linear-gradient(top, #d9eaf3 0%, #fff 8%) 0 4px;
+        -webkit-background-size: 100% 32px;
+        -moz-background-size: 100% 32px;
+        -ms-background-size: 100% 32px;
+        -o-background-size: 100% 32px;
+        background-size: 100% 32px;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.07);
+        -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.07);
+        box-shadow: 0 1px 2px rgba(0,0,0,0.07);
+        width: 400px;
+        text-align: left;;
+      }
+
+      .paper::before {
+        content: '';
+        position: absolute;
+        width: 4px;
+        top: 0;
+        left: 20px;
+        bottom: 0;
+        border: 1px solid;
+        border-color: transparent rgba(200,0,0,.3);
+      }
+
+      textarea {
+        display: block;
+        width: 94%;
+        margin: 0 auto;
+        padding: 4% 3%;
+        border: none;
+        outline: none;
+        height: 94%;
+        background: transparent;
+        line-height: 32px;
+      }
+
+      #buttons {
+        padding-top: 10px;
+      }
+
     </style>
     <script src="popup.js"></script>
   </head>
   <body>
     <div id="note-div" class="text-center">
-      <textarea class="form-control" rows="7" id="note-area"></textarea>
-      <button id="all-button" class="btn btn-sm btn-primary pull-left">View All</button>
-      <button id="cancel-button" class="btn btn-sm btn-danger">Cancel</button>
-      <button id="save-button" class="btn btn-sm btn-success pull-right">Save</button>
+      <section class="paper">
+        <article class="head"></article>
+        <article contenteditable="true" id="note-area">
+        </article>
+      </section>
+      <div id="buttons">
+        <button id="all-button" class="btn btn-sm btn-primary pull-left">View All</button>
+        <button id="cancel-button" class="btn btn-sm btn-danger">Cancel</button>
+        <button id="save-button" class="btn btn-sm btn-success pull-right">Save</button>
+      </div>
     </div>
   </body>
 </html>
