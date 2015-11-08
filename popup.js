@@ -56,5 +56,40 @@ document.addEventListener('DOMContentLoaded', function() {
     // Put the image URL in Google search.
     //renderStatus('Performing Google Image search for ' + url);
 
+    document.getElementById("cancel-button").onclick = function() {
+      console.log("clicked the button");
+    };
+
+    document.getElementById("all-button").onclick = function() {
+      chrome.storage.sync.get("data", function(items) {
+        if (!chrome.runtime.error) {
+          console.log("allButton clicked");
+          console.log(items)
+        }
+      });
+    };
+
+    //document.body.onload = function() {
+    //  chrome.storage.sync.get("data", function(items) {
+    //    if (!chrome.runtime.error) {
+    //      console.log(items);
+    //      //document.getElementById("data").innerText = items.data;
+    //    }
+    //  });
+    //};
+
+    document.getElementById("save-button").onclick = function() {
+      var d = document.getElementById("note-area").value;
+      chrome.storage.sync.set({ "data" : d }, function() {
+        if (chrome.runtime.error) {
+          console.log("Runtime error.");
+        }
+      });
+      window.close();
+    };
   });
 });
+
+
+
+
