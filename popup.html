@@ -56,6 +56,7 @@
         box-shadow: 0 1px 2px rgba(0,0,0,0.07);
         width: 400px;
           min-height: 200px;
+          max-height: 95%;
         text-align: left;
       }
 
@@ -83,7 +84,7 @@
       }
 
       #buttons {
-        padding-top: 10px;
+          /*position: absolute;*/
       }
 
     </style>
@@ -96,11 +97,11 @@
         <article contenteditable="true" id="note-area">
         </article>
       </section>
-      <div id="buttons">
+      <span id="buttons">
         <button id="all-button" class="btn btn-sm btn-primary pull-left">View All</button>
         <button id="cancel-button" class="btn btn-sm btn-danger">Cancel</button>
         <button id="save-button" class="btn btn-sm btn-success pull-right">Save</button>
-      </div>
+      </span>
     </div>
   </body>
 </html>
