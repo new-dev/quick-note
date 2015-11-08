@@ -52,9 +52,52 @@ function renderStatus(statusText) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
+
+  var noteList = [];
   getCurrentTabUrl(function(url) {
     // Put the image URL in Google search.
     //renderStatus('Performing Google Image search for ' + url);
-
   });
+
+  document.getElementById("cancel-button").onclick = function() {
+    console.log("clicked the button");
+    chrome.storage.local.clear(function(storedNotes) {});
+  };
+
+  document.getElementById("all-button").onclick = function() {
+    chrome.storage.local.get(function(storedNotes) {
+      if (!chrome.runtime.error) {
+        console.log(storedNotes["data"]);
+      }
+    })
+  };
+
+  document.getElementById("save-button").onclick = function() {
+    var noteText = document.getElementById("note-area").value;
+
+    var newNoteData = {
+      note: noteText,
+      url: "",
+      date: ""
+    };
+
+    chrome.storage.local.get(function(storedNotes) {
+      if(typeof(storedNotes["data"]) !== 'undefined' && storedNotes["data"] instanceof Array) {
+        storedNotes["data"].push(newNoteData);
+      } else {
+        storedNotes["data"] = [newNoteData];
+      }
+      chrome.storage.local.set(storedNotes, function() {
+        if (chrome.runtime.error) {
+          console.log("RuntimeError.");
+        }
+      });
+      //window.close();
+    });
+  };
+
 });
+
+
+
+
