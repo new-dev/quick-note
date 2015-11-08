@@ -79,6 +79,7 @@ app.controller('appCtrl', function($scope, $q){
           }
         });
       });
+      $scope.noteList.splice(index, 1);
     };
 
   });
