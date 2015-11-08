@@ -36,11 +36,11 @@
                 title="Delete Note">
               <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
           </span>
-           <span class="btn btn-xs btn-default edit-note-button animated fadeIn"  ng-show="hoverEdit" data-ng-click="enableEdit ? nonEditable() : editable(),editNote($index)"
+           <span class="btn btn-xs btn-default edit-note-button animated fadeIn"  ng-show="hoverEdit" data-ng-click="enableEdit ? nonEditable() : editable() ? editNote($index) : break"
                  title="{{enableEdit ? 'Save Note' : 'Edit Note'}}">
               <span class="glyphicon" ng-class="!enableEdit ? 'glyphicon-pencil' : 'glyphicon-save'" aria-hidden="true"></span>
           </span>
-          <div class="note-text" contenteditable="{{enableEdit==undefined?false :enableEdit}}" ng-class="hoverEdit ? 'text-top-margin' : 'note-text';" ng-model="editText">{{notes.noteText.toString()}}</div>
+          <div class="note-text" contenteditable="{{enableEdit==undefined?false :enableEdit}}" ng-class="hoverEdit ? 'text-top-margin' : 'note-text'">{{notes.noteText.toString()}}</div>
       </div>
   </span>
   <span id="view-note" class="display-nothing">
