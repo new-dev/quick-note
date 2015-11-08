@@ -83,9 +83,10 @@
     </div>
       </span>
   <span id="note-list" class="display-nothing">
-      <div id="all-notes" ng-repeat="note in noteList track by $index">
-          <div>note.noteText</div>
-          <div>note.date</div>
+      {{noteList}}
+      <div id="all-notes" ng-repeat="notes in noteList">
+          <div>{{notes.noteText}}</div>
+          <div>{{notes.date}}</div>
           <div style="border-bottom: 2px;"></div>
       </div>
   </span>
