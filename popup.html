@@ -4,7 +4,7 @@
  "browser_action" field in manifest.json contains the "default_popup" key with
  value "popup.html".
  -->
-<html>
+<html ng-app>
 <head>
     <title>Quik Note</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
@@ -12,6 +12,7 @@
         body {
             font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
             font-size: 100%;
+            border-color: transparent;
         }
         #note-div {
             /* avoid an excessively wide status text */
@@ -19,6 +20,7 @@
             text-overflow: ellipsis;
             *//*overflow: hidden;*/
             width: 400px;
+            background: linear-gradient(rgba(240,240,240,.5),rgba(255,255,255,.5)); /* Standard syntax */
         }
         #note-area {
             font-size: 17px;
@@ -30,7 +32,6 @@
             overflow: auto;
             min-height: 200px;
         }
-
         textarea {
             display: block;
             width: 94%;
@@ -45,8 +46,6 @@
         }
 
         #buttons {
-            margin-top: 20px;
-            margin-bottom: 20px;
             padding: 10px 15px 10px 15px;
             text-align: center;
         }
@@ -58,18 +57,27 @@
             border-radius: 1px;
             width: 90px;
             text-align: center;
+            font-weight: 400;
+            letter-spacing: .08em;
+            border-color: transparent;
         }
+        .btn:hover {
+            opacity: .9;
+            border-color: transparent;
+        }
+        [contentEditable=true]:empty:not(:focus):before{
+            content:attr(data-text)
+        }
+
     </style>
+    <script src="angular.min.js"></script>
     <script src="popup.js"></script>
 </head>
 <body>
 <span id="new-note">
     <div id="note-div">
-        <section>
-            <article></article>
-            <article contenteditable="true" id="note-area">
-            </article>
-        </section>
+        <div contentEditable=true data-text="Enter text here" id="note-area">
+        </div>
       <div id="buttons">
         <button id="all-button" class="btn btn-primary pull-left">View All</button>
         <button id="cancel-button" class="btn btn-danger text-center">Cancel</button>

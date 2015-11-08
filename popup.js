@@ -2,7 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-document.addEventListener('DOMContentLoaded', function() {
+var app = angular.module('app', []);
+
+app.controller('appCtrl', function($scope){
+
 
   getCurrentTabUrl(function(url) {
 
@@ -50,6 +53,9 @@ document.addEventListener('DOMContentLoaded', function() {
     };
   });
 });
+
+/*document.addEventListener('DOMContentLoaded', function() {
+});*/
 
 function displayNewNote() {
 
