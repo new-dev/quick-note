@@ -86,7 +86,11 @@
     </div>
       </span>
   <span id="note-list" class="display-nothing">
-    IT IS SHWOING note list INSTEAD
+      <div id="all-notes" ng-repeat="note in noteList track by $index">
+          <div>note.noteText</div>
+          <div>note.date</div>
+          <div style="border-bottom: 2px;"></div>
+      </div>
   </span>
   <span id="view-note" class="display-nothing">
       It is viewing note
