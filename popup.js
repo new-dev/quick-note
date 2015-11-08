@@ -113,7 +113,10 @@ app.controller('appCtrl', function($scope, $q){
 
     $scope.focusOnEdit = function(index) {
       console.log("focus");
-      document.getElementById("text"+index).focus();
+      window.setTimeout(function() {
+        document.getElementById("text"+index).focus();
+      }, 0);
+
     };
 
   });
