@@ -11,20 +11,42 @@ app.controller('appCtrl', function($scope){
 
     document.getElementById("note-area").focus();
 
+    var doodleJump = function(data) {
+      $scope.noteList = data;
+    };
+
+    $scope.loadNotes = function(callback) {
+        chrome.storage.sync.get(function(storedNotes) {
+          if (!chrome.runtime.error) {
+             console.log(storedNotes["data"]);
+            callback(storedNotes["data"]);
+            //$scope.noteList = storedNotes["data"];
+            //https://www.google.com/
+            //chrome.tabs.update({url: "https://www.google.com/"});
+          }
+        })
+    };
+
+    //$scope.noteList = loadNotes();
+
     $scope.cancel = function() {
       console.log("clicked the button");
       chrome.storage.sync.clear(function(storedNotes) {});
     };
 
     $scope.viewAll = function() {
-      chrome.storage.sync.get(function(storedNotes) {
-        if (!chrome.runtime.error) {
-          console.log(storedNotes["data"]);
-          displayNoteList();
-          //https://www.google.com/
-          //chrome.tabs.update({url: "https://www.google.com/"});
-        }
-      })
+      //chrome.storage.sync.get(function(storedNotes) {
+      //  if (!chrome.runtime.error) {
+      //    //console.log(storedNotes["data"]);
+      //    console.log($scope.noteList);
+      //
+      //    //displayNoteList();
+      //    //https://www.google.com/
+      //    //chrome.tabs.update({url: "https://www.google.com/"});
+      //  }
+      //})
+      $scope.loadNotes(doodleJump());
+      displayNoteList();
     };
 
     $scope.saveNote = function() {
@@ -32,7 +54,7 @@ app.controller('appCtrl', function($scope){
       var currentDate = getCurrentDate();
 
       var newNoteData = {
-        note: noteText,
+        noteText: noteText,
         url: url,
         date: currentDate
       };
@@ -56,6 +78,17 @@ app.controller('appCtrl', function($scope){
 
 /*document.addEventListener('DOMContentLoaded', function() {
 });*/
+
+function loadNotes() {
+  chrome.storage.sync.get(function(storedNotes, callback) {
+    if (!chrome.runtime.error) {
+     // console.log(storedNotes["data"]);
+      callback()
+      //https://www.google.com/
+      //chrome.tabs.update({url: "https://www.google.com/"});
+    }
+  })
+}
 
 function displayNewNote() {
 
