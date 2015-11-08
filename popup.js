@@ -94,7 +94,7 @@ app.controller('appCtrl', function($scope, $q){
 
     $scope.editNote = function(index) {
       var editedNoteData = $scope.deleteNote(index);
-      editedNoteData.noteText =
+      editedNoteData.noteText = document.getElementsByClassName("hoverEdit");
 
       chrome.storage.sync.get(function(storedNotes) {
         if(typeof(storedNotes.data) !== 'undefined' && storedNotes.data instanceof Array) {
