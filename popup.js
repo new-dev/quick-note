@@ -37,8 +37,7 @@ app.controller('appCtrl', function($scope, $q){
     };
 
     $scope.cancel = function() {
-      console.log("clicked the button");
-      chrome.storage.sync.clear(function(storedNotes) {});
+      window.close();
     };
 
     $scope.viewAll = function() {
