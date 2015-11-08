@@ -60,7 +60,7 @@
             margin-bottom: 20px;
             outline: none;
             overflow: auto;
-            min-height: 200px;
+            min-height: 100px;
         }
         .display-nothing {
             display: none;
@@ -78,18 +78,32 @@
             border-color: transparent;
         }
         .note-text {
-            float:left;
-            max-width: 300px;
             word-break: break-all;
-            max-height: 100px;
+            white-space: pre-wrap;
         }
         .note-date {
-            float: right;
+            float:right;
+            width: 100px;
+            margin-left: 15px;
+            color: #a1a1a1;
         }
 
-        #logo-text {
-            color: #428bca;
+        .logo-text {
+            color: #c1c1c1;
             font-size: 14px;
+            font-weight: bold;
+        }
+
+        .q-logo {
+            color: #5bc0de;
+            font-size: 14px;
+            font-weight: bold;
+            padding-left: 5px;
+        }
+        .n-logo {
+            color: #5cb85c;
+            font-size: 14px;
+            font-weight: bold;
         }
 
     </style>
@@ -110,13 +124,13 @@
       </span>
   <span id="note-list" class="display-nothing">
       <div id="all-notes" ng-repeat="notes in noteList" data-ng-click="loadUrl(notes.url)">
-          <div class="note-text">{{notes.noteText.toString()}}</div>
           <div class="note-date">{{notes.date.toString()}}</div>
+          <div class="note-text">{{notes.noteText.toString()}}</div>
       </div>
   </span>
   <span id="view-note" class="display-nothing">
       It is viewing note
   </span>
-<span id="logo-text" class="color-primary">QuikNote</span>
+<span class="q-logo" >Q</span><span class="logo-text">uik</span><span class="n-logo">N</span><span class='logo-text'>ote</span>
 </body>
 </html>
