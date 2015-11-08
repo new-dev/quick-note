@@ -57,7 +57,7 @@ app.controller('appCtrl', function($scope, $q){
             console.log("RuntimeError.");
           }
         });
-        //window.close();
+        window.close();
       });
     };
   });
