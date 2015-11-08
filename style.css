@@ -89,6 +89,7 @@ textarea {
         }*/
 .text-top-margin {
     margin-top: -28px;
+    word-wrap: break-word;
     white-space: pre-wrap;
 }
 /*        .text-top-margin::first-letter {
@@ -125,7 +126,7 @@ textarea {
     font-weight: bold;
 }
 
-.edit-note-button {
+.delete-note-button {
     position: relative;
     top: 25px;
     left: 305px;
@@ -134,7 +135,7 @@ textarea {
     border-color: rgba(12,12,12,.1);
     background-color: transparent;
 }
-.delete-note-button {
+.edit-note-button {
     position: relative;
     top: 25px;
     left: 238px;
@@ -160,4 +161,24 @@ textarea {
 }
 #all-notes:hover + .delete-note-button {
     display: none;
+}
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-button {
+    width: 8px;
+    height:5px;
+}
+::-webkit-scrollbar-track {
+    background:#eee;
+    border: thin solid lightgray;
+    box-shadow: 0px 0px 3px #dfdfdf inset;
+    border-radius:10px;
+}
+::-webkit-scrollbar-thumb {
+    background-color:rgba(91, 192, 222, .7);
+    border-radius:10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background:#7d7d7d;
 }
