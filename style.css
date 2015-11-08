@@ -4,6 +4,7 @@ body {
     border-color: transparent;
     /*-webkit-font-smoothing: subpixel-antialiased;*/
     font-size: 100%;
+    word-wrap: break-word;
 }
 #note-div {
     /* avoid an excessively wide status text */
@@ -20,8 +21,8 @@ body {
     border: none;
     margin-bottom: 20px;
     outline: none;
-    overflow: auto;
     min-height: 200px;
+    overflow:hidden;
 }
 textarea {
     display: block;
@@ -33,7 +34,7 @@ textarea {
     height: 90%;
     background: transparent;
     line-height: 20px;
-    overflow: auto;
+    overflow:hidden;
 }
 
 #buttons {
