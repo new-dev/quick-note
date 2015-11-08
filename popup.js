@@ -85,17 +85,6 @@ app.controller('appCtrl', function($scope, $q){
   });
 });
 
-function loadNotes() {
-  chrome.storage.sync.get(function(storedNotes, callback) {
-    if (!chrome.runtime.error) {
-     // console.log(storedNotes["data"]);
-      callback()
-      //https://www.google.com/
-      //chrome.tabs.update({url: "https://www.google.com/"});
-    }
-  })
-}
-
 function displayNoteList() {
   document.getElementById('new-note').className += "display-nothing";
   document.getElementById('note-list').className =
