@@ -96,7 +96,7 @@ app.controller('appCtrl', function($scope, $q){
       console.log("edited note");
       var editedNoteData = $scope.deleteNote(index);
       console.log(editedNoteData);
-      editedNoteData.noteText = document.getElementsByClassName("hoverEdit");
+      editedNoteData[0].noteText = document.getElementsByClassName("hoverEdit");
 
       chrome.storage.sync.get(function(storedNotes) {
         if(typeof(storedNotes.data) !== 'undefined' && storedNotes.data instanceof Array) {
@@ -110,6 +110,7 @@ app.controller('appCtrl', function($scope, $q){
           }
         });
       });
+      $scope.unshift(editedNoteData);
     };
 
   });
