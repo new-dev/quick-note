@@ -17,6 +17,9 @@ document.addEventListener('DOMContentLoaded', function() {
       chrome.storage.sync.get(function(storedNotes) {
         if (!chrome.runtime.error) {
           console.log(storedNotes["data"]);
+          displayNoteList();
+          //https://www.google.com/
+          //chrome.tabs.update({url: "https://www.google.com/"});
         }
       })
     };
@@ -47,6 +50,26 @@ document.addEventListener('DOMContentLoaded', function() {
     };
   });
 });
+
+function displayNewNote() {
+
+}
+
+function displayNoteList() {
+  document.getElementById('new-note').className += "display-nothing";
+  document.getElementById('note-list').className =
+      document.getElementById('note-list').className.replace(
+          /(?:^|\s)display-nothing(?!\S)/g , ''
+      )
+}
+
+function displaySingleNote() {
+  document.getElementById('note-list').className += "display-nothing";
+  document.getElementById('view-note').className =
+      document.getElementById('view-note').className.replace(
+          /(?:^|\s)display-nothing(?!\S)/g , ''
+      )
+}
 
 function getCurrentDate() {
   var today = new Date();
