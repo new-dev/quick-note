@@ -4,6 +4,22 @@ var app = angular.module('app', []);
 
 app.controller('appCtrl', function($scope, $q){
 
+  $scope.showHover = false;
+  $scope.setClassForHover = function() {
+    $scope.showHover = true;
+  };
+  $scope.removeClassForHover = function() {
+    $scope.showHover = false;
+  };
+
+  $scope.hoverIn = function(){
+    this.hoverEdit = true;
+  };
+
+  $scope.hoverOut = function(){
+    this.hoverEdit = false;
+  };
+
   getCurrentTabUrl(function(url) {
     document.getElementById("note-area").focus();
 
