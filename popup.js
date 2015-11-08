@@ -47,10 +47,10 @@ app.controller('appCtrl', function($scope, $q){
       };
 
       chrome.storage.sync.get(function(storedNotes) {
-        if(typeof(storedNotes["data"]) !== 'undefined' && storedNotes["data"] instanceof Array) {
-          storedNotes["data"].unshift(newNoteData);
+        if(typeof(storedNotes.data) !== 'undefined' && storedNotes.data instanceof Array) {
+          storedNotes.data.unshift(newNoteData);
         } else {
-          storedNotes["data"] = [newNoteData];
+          storedNotes.data = [newNoteData];
         }
         chrome.storage.sync.set(storedNotes, function() {
           if (chrome.runtime.error) {
@@ -60,11 +60,24 @@ app.controller('appCtrl', function($scope, $q){
         window.close();
       });
     };
+
+    $scope.deleteNote = function(index) {
+      chrome.storage.sync.get(function(storedNotes) {
+        if(typeof(storedNotes.data) !== 'undefined' && storedNotes.data instanceof Array) {
+          storedNotes.data.splice(index, 1);
+        } else {
+          console.log("Error, there were no notes to delete");
+        }
+        chrome.storage.sync.set(storedNotes, function() {
+          if (chrome.runtime.error) {
+            console.log("RuntimeError.");
+          }
+        });
+      });
+    };
+
   });
 });
-
-/*document.addEventListener('DOMContentLoaded', function() {
-});*/
 
 function loadNotes() {
   chrome.storage.sync.get(function(storedNotes, callback) {
@@ -77,22 +90,10 @@ function loadNotes() {
   })
 }
 
-function displayNewNote() {
-
-}
-
 function displayNoteList() {
   document.getElementById('new-note').className += "display-nothing";
   document.getElementById('note-list').className =
       document.getElementById('note-list').className.replace(
-          /(?:^|\s)display-nothing(?!\S)/g , ''
-      )
-}
-
-function displaySingleNote() {
-  document.getElementById('note-list').className += "display-nothing";
-  document.getElementById('view-note').className =
-      document.getElementById('view-note').className.replace(
           /(?:^|\s)display-nothing(?!\S)/g , ''
       )
 }
