@@ -26,7 +26,7 @@
     </div>
       </span>
   <span id="note-list" class="display-nothing">
-      <div id="all-notes" ng-repeat="notes in noteList" ng-class="show-button" data-ng-mouseenter="hoverIn()" ng-mouseleave="hoverOut()">
+      <div id="all-notes" ng-repeat="notes in noteList track by $index"" ng-class="show-button" data-ng-mouseenter="hoverIn()" ng-mouseleave="hoverOut()">
           <div class="note-date">{{notes.date.toString()}}</div>
           <span class="btn btn-xs btn-default open-note-button animated fadeIn" data-ng-click="loadUrl(notes.url)" ng-show="hoverEdit"
                 title="Open Url">
