@@ -19,6 +19,8 @@ app.controller('appCtrl', function($scope, $q){
     this.enableEdit = false;
   };
 
+  $scope.editText = "";
+
   getCurrentTabUrl(function(url) {
     document.getElementById("note-area").focus();
 
@@ -92,6 +94,7 @@ app.controller('appCtrl', function($scope, $q){
 
     $scope.editNote = function(index) {
       var editedNoteData = $scope.deleteNote(index);
+      editedNoteData.noteText =
 
       chrome.storage.sync.get(function(storedNotes) {
         if(typeof(storedNotes.data) !== 'undefined' && storedNotes.data instanceof Array) {
