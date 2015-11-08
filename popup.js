@@ -3,12 +3,20 @@
 var app = angular.module('app', []);
 
 app.controller('appCtrl', function($scope, $q){
-  $scope.hoverIn = function(){
+  $scope.hoverIn = function() {
     this.hoverEdit = true;
   };
 
-  $scope.hoverOut = function(){
+  $scope.hoverOut = function() {
     this.hoverEdit = false;
+  };
+
+  $scope.editable = function() {
+    this.enableEdit = true;
+  };
+
+  $scope.nonEditable = function() {
+    this.enableEdit = false;
   };
 
   getCurrentTabUrl(function(url) {
@@ -81,6 +89,10 @@ app.controller('appCtrl', function($scope, $q){
       });
       $scope.noteList.splice(index, 1);
     };
+
+    $scope.editNote = function(index) {
+
+    }
 
   });
 });
