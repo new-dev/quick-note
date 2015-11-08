@@ -40,6 +40,11 @@ textarea {
     padding: 10px 15px 10px 15px;
     text-align: center;
 }
+#all-button,
+#save-button,
+#cancel-button {
+    -webkit-animation-duration: 1.25s
+}
 
 #all-notes {
     width: 400px;
@@ -148,6 +153,11 @@ textarea {
     background-color: transparent;
 }
 
+.open-note-button,
+.delete-note-button,
+.edit-note-button {
+    -webkit-animation-duration: .5s
+}
 #all-notes:hover + .delete-note-button {
     display: none;
 }

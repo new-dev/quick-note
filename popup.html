@@ -19,24 +19,24 @@
         <div contentEditable=true id="note-area">
         </div>
       <div id="buttons">
-        <button id="all-button" class="btn btn-info pull-left" data-ng-click="viewAll()">View All</button>
-        <button id="cancel-button" class="btn btn-danger text-center" data-ng-click="cancel()">Cancel</button>
-        <button id="save-button" class="btn btn-success pull-right" data-ng-click="saveNote()">Save</button>
+        <button id="all-button" class="btn btn-info pull-left animated fadeInLeft" data-ng-click="viewAll()">View All</button>
+        <button id="cancel-button" class="btn btn-danger text-center animated fadeInUp" data-ng-click="cancel()">Cancel</button>
+        <button id="save-button" class="btn btn-success pull-right animated fadeInRight" data-ng-click="saveNote()">Save</button>
       </div>
     </div>
       </span>
   <span id="note-list" class="display-nothing">
       <div id="all-notes" ng-repeat="notes in noteList" ng-class="show-button" data-ng-mouseenter="hoverIn()" ng-mouseleave="hoverOut()">
           <div class="note-date">{{notes.date.toString()}}</div>
-          <span class="btn btn-xs btn-default open-note-button" data-ng-click="loadUrl(notes.url)" ng-show="hoverEdit"
+          <span class="btn btn-xs btn-default open-note-button animated fadeIn" data-ng-click="loadUrl(notes.url)" ng-show="hoverEdit"
                 title="Open Url">
               <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>
           </span>
-          <span class="btn btn-xs btn-default edit-note-button" ng-show="hoverEdit" data-ng-click="editNote($index)"
+          <span class="btn btn-xs btn-default edit-note-button animated fadeIn" ng-show="hoverEdit" data-ng-click="editNote($index)"
                 title="Edit Note">
               <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
           </span>
-          <span class="btn btn-xs btn-default delete-note-button" ng-show="hoverEdit" data-ng-click="deleteNote($index)"
+          <span class="btn btn-xs btn-default delete-note-button animated fadeIn" ng-show="hoverEdit" data-ng-click="deleteNote($index)"
                 title="Delete Note">
               <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
           </span>
@@ -46,6 +46,8 @@
   <span id="view-note" class="display-nothing">
       It is viewing note
   </span>
-<span class="q-logo" >Q</span><span class="logo-text">uik</span><span class="n-logo">N</span><span class='logo-text'>ote</span>
+<span class="animated fadeIn" style="-webkit-animation-duration: 3s">
+    <span class="q-logo" >Q</span><span class="logo-text">uik</span><span class="n-logo">N</span><span class='logo-text'>ote</span>
+</span>
 </body>
 </html>
