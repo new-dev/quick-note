@@ -40,7 +40,7 @@
                  title="{{enableEdit ? 'Save Note' : 'Edit Note'}}">
               <span class="glyphicon" ng-class="!enableEdit ? 'glyphicon-pencil' : 'glyphicon-save'" aria-hidden="true"></span>
           </span>
-          <div id="{{text-$index}}" class="note-text" contenteditable="{{enableEdit==undefined?false :enableEdit}}" ng-class="hoverEdit ? 'text-top-margin' : 'note-text'">{{notes.noteText.toString()}}</div>
+          <div id="{{'text'+$index}}" class="note-text" contenteditable="{{enableEdit==undefined?false :enableEdit}}" ng-class="hoverEdit ? 'text-top-margin' : 'note-text'">{{notes.noteText.toString()}}</div>
       </div>
   </span>
   <span id="view-note" class="display-nothing">
