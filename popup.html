@@ -53,7 +53,7 @@
 
         #all-notes {
             width: 400px;
-            background: linear-gradient(rgba(245,245,245,.5),rgba(255,255,255,.5)); /* Standard syntax */
+            background: linear-gradient(rgba(253,253,253,.5),rgba(255,255,255,.5)); /* Standard syntax */
             font-size: 17px;
             line-height: 1.7;
             padding: 2px 15px 0 15px;
@@ -84,10 +84,26 @@
             word-wrap: break-word;
             white-space: pre-wrap;
         }
+/*        .note-text::first-letter {
+            font-size: 20px;
+            font-weight: 500;
+            letter-spacing: .01em;
+            text-transform: uppercase;
+            color: #515151;
+            cursor: default;
+        }*/
         .text-top-margin {
             margin-top: -28px;
             white-space: pre-wrap;
         }
+/*        .text-top-margin::first-letter {
+            font-size: 20px;
+            font-weight: 500;
+            letter-spacing: .01em;
+            text-transform: uppercase;
+            color: #515151;
+            cursor: default;
+        }*/
         .note-date {
             float:right;
             width: 100px;
@@ -116,8 +132,8 @@
 
         .edit-note-button {
             position: relative;
-            top: 23px;
-            left: 318px;
+            top: 25px;
+            left: 305px;
             width: 27px;
             border-radius: 1px;
             border-color: rgba(12,12,12,.1);
@@ -125,8 +141,17 @@
         }
         .delete-note-button {
             position: relative;
-            top: 23px;
-            left: 248px;
+            top: 25px;
+            left: 238px;
+            width: 27px;
+            border-radius: 1px;
+            border-color: rgba(12,12,12,.1);
+            background-color: transparent;
+        }
+        .open-note-button {
+            position: relative;
+            top: 25px;
+            left: 266px;
             width: 27px;
             border-radius: 1px;
             border-color: rgba(12,12,12,.1);
@@ -138,6 +163,7 @@
         }
 
     </style>
+    <script src="bootstrap.min.js"></script>
     <script src="angular.min.js"></script>
     <script src="popup.js"></script>
 </head>
@@ -154,12 +180,20 @@
     </div>
       </span>
   <span id="note-list" class="display-nothing">
-      <div id="all-notes" ng-repeat="notes in noteList" data-ng-click="loadUrl(notes.url)" ng-class="show-button" data-ng-mouseenter="hoverIn()" ng-mouseleave="hoverOut()">
+      <div id="all-notes" ng-repeat="notes in noteList" ng-class="show-button" data-ng-mouseenter="hoverIn()" ng-mouseleave="hoverOut()">
           <div class="note-date">{{notes.date.toString()}}</div>
+          <span class="btn btn-xs btn-default open-note-button" data-ng-click="loadUrl(notes.url)" ng-show="hoverEdit"
+                title="Open Url">
+              <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>
+          </span>
           <span class="btn btn-xs btn-default edit-note-button" ng-show="hoverEdit"
-                data-toggle="tooltip" data-placement="top" title="Edit Note"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></span>
+                title="Edit Note">
+              <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+          </span>
           <span class="btn btn-xs btn-default delete-note-button" ng-show="hoverEdit"
-                data-toggle="tooltip" data-placement="top" title="Delete Note"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></span>
+                title="Delete Note">
+              <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+          </span>
           <div class="note-text" ng-class="hoverEdit ? 'text-top-margin' : 'note-text'">{{notes.noteText.toString()}}</div>
       </div>
   </span>
