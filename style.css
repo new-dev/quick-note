@@ -129,6 +129,10 @@ textarea {
     font-weight: bold;
 }
 
+.green-color {
+    color: #5cb85c;
+}
+
 .delete-note-button {
     position: relative;
     top: 25px;
