@@ -179,6 +179,9 @@ textarea {
     border-color: #5bc0de;;
     background-color: transparent;
 }
+.clickable-logo {
+    cursor: pointer;
+}
 .open-note-button:hover {
     background-color: rgba(91,192,222,.1);
 }
