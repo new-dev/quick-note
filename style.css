@@ -45,7 +45,7 @@ textarea {
 #all-button,
 #save-button,
 #cancel-button {
-    -webkit-animation-duration: 1.25s
+    -webkit-animation-duration: .7s
 }
 
 #all-notes {
@@ -60,7 +60,7 @@ textarea {
     min-height: 150px;
     border-bottom: solid;
     border-width: 1px;
-    border-color: rgba(91,192,222,.2);
+    border-color: rgba(45,182,207,.2);
 }
 .display-nothing {
     display: none;
@@ -90,7 +90,7 @@ textarea {
             cursor: default;
         }*/
 .text-top-margin {
-    margin-top: -28px;
+    margin-top: -31px;
     word-wrap: break-word;
     white-space: pre-wrap;
 }
@@ -113,82 +113,30 @@ textarea {
 
 .logo-text {
     color: #c1c1c1;
-    font-size: 14px;
-    font-weight: bold;
 }
 
 .q-logo {
-    color: #5bc0de;
-    font-size: 14px;
-    font-weight: bold;
-    padding-left: 5px;
+    color: #2DB6CF;
 }
 .n-logo {
-    color: #5cb85c;
-    font-size: 14px;
-    font-weight: bold;
+    color: #46b98a;
 }
 
 .green-color {
-    color: #5cb85c;
-}
-
-.delete-note-button {
-    position: relative;
-    top: 25px;
-    left: 315px;
-    width: 27px;/*
-    border-radius: 1px;
-    border-color: rgba(12,12,12,.1);*/
-    border-top: 2px ;
-    border-right: 2px ;
-    border-left: 2px ;
-    border-color: #d9534f;
-    background-color: transparent;
-}
-.delete-note-button:hover{
-    background-color: rgba(217,83,79,.1);
-}
-.edit-note-button {
-    position: relative;
-    top: 25px;
-    left: 248px;
-    width: 27px;/*
-    border-radius: 1px;
-    border-color: rgba(12,12,12,.1);*/
-    /*box-shadow: 0 0 1px #FF0000;*/
-    border-top: 2px ;
-    border-right: 2px ;
-    border-left: 2px ;
-    border-color: #5cb85c;
-    background-color: transparent;
-}
-.edit-note-button:hover {
-    background-color: rgba(92,184,92,.1);
-}
-.open-note-button {
-    position: relative;
-    top: 25px;
-    left: 276px;
-    width: 27px;/*
-    border-radius: 1px;
-    border-color: rgba(12,12,12,.1);*/
-    border-top: 2px ;
-    border-right: 2px ;
-    border-left: 2px ;
-    border-color: #5bc0de;;
-    background-color: transparent;
+    color: #46b98a;
 }
 .clickable-logo {
+    /*text-shadow: .02em .02em #505050;*/
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: .24em;
     cursor: pointer;
+    margin-left: 5px;
+    transition: all .2s;
 }
-.open-note-button:hover {
-    background-color: rgba(91,192,222,.1);
-}
-.open-note-button,
-.delete-note-button,
-.edit-note-button {
-    -webkit-animation-duration: .5s
+.clickable-logo:hover {
+    letter-spacing: .3em;
+    transition: all .3s;
 }
 #all-notes:hover + .delete-note-button {
     display: none;

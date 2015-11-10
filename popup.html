@@ -10,6 +10,7 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
     <link rel="stylesheet" href="animate.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="buttons.css">
     <script src="angular.min.js"></script>
     <script src="popup.js"></script>
 </head>
@@ -19,26 +20,26 @@
         <div contentEditable=true id="note-area">
         </div>
       <div id="buttons">
-        <button id="all-button" class="btn btn-info pull-left animated fadeInLeft" data-ng-click="viewAll()" title="Show List of All Notes">View All</button>
-        <button id="cancel-button" class="btn btn-danger text-center animated fadeInUp" data-ng-click="cancel()" title="Delete Note and Exit">Cancel</button>
-        <button id="save-button" class="btn btn-success pull-right animated fadeInRight" data-ng-click="saveNote()" title="Save Note and Url">Save</button>
+        <span id="all-button" class="view-all-homepage-button btn animated fadeInLeft" data-ng-click="viewAll()" title="Show List of All Notes">View All</span>
+        <span id="cancel-button" class="cancel-button-homepage btn animated zoomIn" data-ng-click="cancel()" title="Delete Note and Exit">Cancel</span>
+        <span id="save-button" class="save-button-homepage btn animated fadeInRight" data-ng-click="saveNote()" title="Save Note and Url">Save</span>
       </div>
     </div>
       </span>
   <span id="note-list" class="display-nothing">
       <div id="all-notes" ng-repeat="notes in noteList track by $index" ng-class="show-button" data-ng-mouseenter="hoverIn()" ng-mouseleave="hoverOut()">
           <div class="note-date">{{notes.date.toString()}}</div>
-          <span class="btn btn-xs btn-default open-note-button animated fadeIn" data-ng-click="loadUrl(notes.url)" ng-show="hoverEdit"
+          <span class="open-note-button btn animated fadeIn" data-ng-click="loadUrl(notes.url)" ng-show="hoverEdit"
                 title="Open Url">
               <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>
           </span>
-          <span class="btn btn-xs btn-default delete-note-button animated fadeIn" ng-show="hoverEdit" data-ng-click="deleteNote($index)"
+          <span class="edit-note-button btn animated fadeIn"  ng-show="hoverEdit" data-ng-click="enableEdit ? nonEditable() : editable(); !enableEdit ? editNote($index) : focusOnEdit($index)"
+                title="{{enableEdit ? 'Save Note' : 'Edit Note'}}">
+              <span class="glyphicon" ng-class="!enableEdit ? 'glyphicon-pencil' : 'glyphicon-save green-color'" aria-hidden="true"></span>
+          </span>
+          <span class="delete-note-button btn animated fadeIn" ng-show="hoverEdit" data-ng-click="deleteNote($index)"
                 title="Delete Note">
               <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-          </span>
-           <span class="btn btn-xs btn-default edit-note-button animated fadeIn"  ng-show="hoverEdit" data-ng-click="enableEdit ? nonEditable() : editable(); !enableEdit ? editNote($index) : focusOnEdit($index)"
-                 title="{{enableEdit ? 'Save Note' : 'Edit Note'}}">
-              <span class="glyphicon" ng-class="!enableEdit ? 'glyphicon-pencil' : 'glyphicon-save green-color'" aria-hidden="true"></span>
           </span>
           <div class="note-text" contenteditable="{{enableEdit==undefined?false :enableEdit}}" id="{{'text'+$index}}" ng-class="hoverEdit ? 'text-top-margin' : 'note-text'">{{notes.noteText.toString()}}</div>
       </div>
@@ -46,7 +47,7 @@
   <span id="view-note" class="display-nothing">
       It is viewing note
   </span>
-<span class="animated fadeIn clickable-logo" data-ng-click="viewCreateNote()" style="-webkit-animation-duration: 3s" title="Alex Tappin Timothy Jensen are AWESOME">
+<span class="animated fadeIn clickable-logo" data-ng-click="viewCreateNote()" style="-webkit-animation-duration: 1.5s" title="Take a new note">
     <span class="q-logo" >Q</span><span class="logo-text">uik</span><span class="n-logo">N</span><span class='logo-text'>ote</span>
 </span>
 </body>
