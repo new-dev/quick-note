@@ -10,6 +10,7 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
     <link rel="stylesheet" href="animate.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="buttons.css">
     <script src="angular.min.js"></script>
     <script src="popup.js"></script>
 </head>
@@ -19,9 +20,9 @@
         <div contentEditable=true id="note-area">
         </div>
       <div id="buttons">
-        <button id="all-button" class="btn btn-info pull-left animated fadeInLeft" data-ng-click="viewAll()" title="Show List of All Notes">View All</button>
-        <button id="cancel-button" class="btn btn-danger text-center animated zoomIn" data-ng-click="cancel()" title="Delete Note and Exit">Cancel</button>
-        <button id="save-button" class="btn btn-success pull-right animated fadeInRight" data-ng-click="saveNote()" title="Save Note and Url">Save</button>
+        <span id="all-button" class="view-all-homepage-button btn animated fadeInLeft" data-ng-click="viewAll()" title="Show List of All Notes">View All</span>
+        <span id="cancel-button" class="cancel-button-homepage btn animated zoomIn" data-ng-click="cancel()" title="Delete Note and Exit">Cancel</span>
+        <span id="save-button" class="save-button-homepage btn animated fadeInRight" data-ng-click="saveNote()" title="Save Note and Url">Save</span>
       </div>
     </div>
       </span>

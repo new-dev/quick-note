@@ -1,0 +1,348 @@
+.button {
+    border: 0 none;
+    border-radius: 2px 2px 2px 2px;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 20px;
+    padding: 7px 10px;
+    text-transform: none;
+    transition: all 0.5s ease 0s;
+    width: 90px;
+    text-align: center;
+}
+
+.button.red {
+    background: none repeat scroll 0 0 #E0645C;
+    color: #FFFFFF;
+}
+
+.button.red:hover {
+    background: none repeat scroll 0 0 #999999;
+    color: #FFFFFF;
+}
+
+.button.red2 {
+    background: none repeat scroll 0 0 #E0645C;
+    color: #FFFFFF;
+}
+
+.button.red2:hover {
+    background: none repeat scroll 0 0 #444444;
+    color: #FFFFFF;
+}
+
+.button.red3 {
+    background: none repeat scroll 0 0 #E0645C;
+    color: #FFFFFF;
+}
+
+.button.red3:hover {
+    background: none repeat scroll 0 0 #2DB6CF;
+    color: #FFFFFF;
+}
+
+.button.red4 {
+    background: none repeat scroll 0 0 #E0645C;
+    color: #FFFFFF;
+}
+
+.button.red4:hover {
+    background: none repeat scroll 0 0 #46b98a;
+    color: #FFFFFF;
+}
+
+.button.dark {
+    background: none repeat scroll 0 0 #444444;
+    color: #FFFFFF;
+}
+
+.button.dark:hover {
+    background: none repeat scroll 0 0 #2DB6CF;
+    color: #FFFFFF;
+}
+
+.button.dark2 {
+    background: none repeat scroll 0 0 #444444;
+    color: #FFFFFF;
+}
+
+.button.dark2:hover {
+    background: none repeat scroll 0 0 #E0645C;
+    color: #FFFFFF;
+}
+
+.button.dark3 {
+    background: none repeat scroll 0 0 #444444;
+    color: #FFFFFF;
+}
+
+.button.dark3:hover {
+    background: none repeat scroll 0 0 #46b98a;
+    color: #FFFFFF;
+}
+
+.button.light {
+    background: none repeat scroll 0 0 #999999;
+    color: #FFFFFF;
+}
+
+.button.light:hover {
+    background: none repeat scroll 0 0 #444444;
+    color: #FFFFFF;
+}
+
+.button.light2 {
+    background: none repeat scroll 0 0 #999999;
+    color: #FFFFFF;
+}
+
+.button.light2:hover {
+    background: none repeat scroll 0 0 #2DB6CF;
+    color: #FFFFFF;
+}
+
+.button.light3 {
+    background: none repeat scroll 0 0 #999999;
+    color: #FFFFFF;
+}
+
+.button.light3:hover {
+    background: none repeat scroll 0 0 #46b98a;
+    color: #FFFFFF;
+}
+
+.button.green {
+    background: none repeat scroll 0 0 #46b98a;
+    color: #FFFFFF;
+}
+
+.button.green:hover {
+    background: none repeat scroll 0 0 #444444;
+    color: #FFFFFF;
+}
+
+.button.green2 {
+    background: none repeat scroll 0 0 #46b98a;
+    color: #FFFFFF;
+}
+
+.button.green2:hover {
+    background: none repeat scroll 0 0 #999999;
+    color: #FFFFFF;
+}
+
+.button.green3 {
+    background: none repeat scroll 0 0 #46b98a;
+    color: #FFFFFF;
+}
+
+.button.green3:hover {
+    background: none repeat scroll 0 0 #E0645C;
+    color: #FFFFFF;
+}
+
+.button.blue {
+    background: none repeat scroll 0 0 #2DB6CF;
+    color: #FFFFFF;
+}
+
+.button.blue:hover {
+    background: none repeat scroll 0 0 #444444;
+    color: #FFFFFF;
+}
+
+.button.blue2 {
+    background: none repeat scroll 0 0 #2DB6CF;
+    color: #FFFFFF;
+}
+
+.button.blue2:hover {
+    background: none repeat scroll 0 0 #999999;
+    color: #FFFFFF;
+}
+
+.button.blue3 {
+    background: none repeat scroll 0 0 #2DB6CF;
+    color: #FFFFFF;
+}
+
+.button.blue3:hover {
+    background: none repeat scroll 0 0 #E0645C;
+    color: #FFFFFF;
+}
+
+.button.blue4 {
+    background: none repeat scroll 0 0 #2DB6CF;
+    opacity: .8;
+    color: #FFFFFF;
+    border-style: solid;
+}
+
+.button.blue4:hover {
+    background: none repeat scroll 0 0 #2DB6CF;
+    opacity: 1;
+    color: #FFFFFF;
+}
+
+.button.trans {
+    background: none repeat scroll 0 0 #46b98a;
+    opacity: .8;
+    color: #FFFFFF;
+    border-style: solid;
+}
+
+.button.trans:hover {
+    background: none repeat scroll 0 0 #46b98a;
+    opacity: 1;
+    color: #FFFFFF;
+}
+
+.button.trans2 {
+    background: none repeat scroll 0 0 #444444;
+    opacity: .8;
+    color: #FFFFFF;
+    border-style: solid;
+}
+
+.button.trans2:hover {
+    background: none repeat scroll 0 0 #444444;
+    opacity: 1;
+    color: #FFFFFF;
+}
+
+.button.trans3 {
+    background: none repeat scroll 0 0 #A6A6A6;
+    opacity: .8;
+    color: #FFFFFF;
+    border-style: solid;
+}
+
+.button.trans3:hover {
+    background: none repeat scroll 0 0 #A6A6A6;
+    opacity: 1;
+    color: #FFFFFF;
+}
+
+.buttonBoxBig {
+    padding-top: 22px;
+    padding-bottom: 22px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.buttonBoxBigger {
+    padding-top: 22px;
+    padding-bottom: 22px;
+    padding-left: 25px;
+    padding-right: 25px;
+    width: 255px;
+}
+
+.buttonText {
+    text-shadow: .03em .03em #505050;
+}
+
+
+.save-button-homepage {
+    padding: 8px 3px 8px 3px;
+    /*    border-top: 2px ;
+        border-right: 2px ;
+        border-left: 2px ;
+        border-color: #5cb85c;*/
+    background-color: transparent;
+    transition: all 0.5s ease 0s;
+}
+.save-button-homepage:after{
+    content:"";
+    background: #5cb85c;
+    position: absolute;
+    bottom: 0;
+    left: 15%;
+    height: .06em;
+    width: 75%;
+    transition: all 0.5s ease 0s;
+
+}
+.save-button-homepage:hover {
+    background-color: rgba(92,184,92,.1);
+    transition: all 0.5s ease 0s;
+}
+.save-button-homepage:hover:after {
+    content:"";
+    background: transparent;
+    bottom: 0;
+    left: 50%;
+    height: .06em;
+    width: 0;
+    transition: all 0.5s ease 0s;
+}
+
+.cancel-button-homepage {
+    padding: 8px 3px 8px 3px;
+    /*    border-top: 2px ;
+        border-right: 2px ;
+        border-left: 2px ;
+        border-color: #5cb85c;*/
+    background-color: transparent;
+    transition: all 0.5s ease 0s;
+}
+.cancel-button-homepage:after{
+    content:"";
+    background: #E0645C;
+    position: absolute;
+    bottom: 0;
+    left: 15%;
+    height: .06em;
+    width: 75%;
+    transition: all 0.5s ease 0s;
+
+}
+.cancel-button-homepage:hover {
+    background-color: rgba(224,100,92,.1);
+    transition: all 0.5s ease 0s;
+}
+.cancel-button-homepage:hover:after {
+    content:"";
+    background: transparent;
+    bottom: 0;
+    left: 50%;
+    height: .06em;
+    width: 0;
+    transition: all 0.5s ease 0s;
+}
+.view-all-homepage-button {
+    padding: 8px 3px 8px 3px;
+    /*    border-top: 2px ;
+        border-right: 2px ;
+        border-left: 2px ;
+        border-color: #5cb85c;*/
+    background-color: transparent;
+    transition: all 0.5s ease 0s;
+}
+.view-all-homepage-button:after{
+    content:"";
+    background: #2DB6CF;
+    position: absolute;
+    bottom: 0;
+    left: 15%;
+    height: .06em;
+    width: 75%;
+    transition: all 0.5s ease 0s;
+
+}
+.view-all-homepage-button:hover {
+    background-color: rgba(45,182,207,.1);
+    transition: all 0.5s ease 0s;
+}
+.view-all-homepage-button:hover:after {
+    content:"";
+    background: transparent;
+    bottom: 0;
+    left: 50%;
+    height: .06em;
+    width: 0;
+    transition: all 0.5s ease 0s;
+}

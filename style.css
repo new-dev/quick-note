@@ -60,7 +60,7 @@ textarea {
     min-height: 150px;
     border-bottom: solid;
     border-width: 1px;
-    border-color: rgba(91,192,222,.2);
+    border-color: rgba(45,182,207,.2);
 }
 .display-nothing {
     display: none;
@@ -116,7 +116,7 @@ textarea {
 }
 
 .q-logo {
-    color: #5bc0de;
+    color: #2DB6CF;
 }
 .n-logo {
     color: #5cb85c;
@@ -169,10 +169,11 @@ textarea {
     border-top: 2px ;
     border-right: 2px ;
     border-left: 2px ;
-    border-color: #5bc0de;
+    border-color: #2DB6CF;
     background-color: transparent;
 }
 .clickable-logo {
+    /*text-shadow: .02em .02em #505050;*/
     font-size: 14px;
     font-weight: 500;
     letter-spacing: .24em;
@@ -185,7 +186,7 @@ textarea {
     transition: all .3s;
 }
 .open-note-button:hover {
-    background-color: rgba(91,192,222,.1);
+    background-color: rgba(45,182,207,.1);
 }
 .open-note-button,
 .delete-note-button,
