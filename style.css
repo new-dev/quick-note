@@ -45,7 +45,7 @@ textarea {
 #all-button,
 #save-button,
 #cancel-button {
-    -webkit-animation-duration: 1.25s
+    -webkit-animation-duration: .7s
 }
 
 #all-notes {
