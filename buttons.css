@@ -251,13 +251,13 @@
     /*    border-top: 2px ;
         border-right: 2px ;
         border-left: 2px ;
-        border-color: #5cb85c;*/
+        border-color: #46b98a;*/
     background-color: transparent;
     transition: all 0.5s ease 0s;
 }
 .save-button-homepage:after{
     content:"";
-    background: #5cb85c;
+    background: #46b98a;
     position: absolute;
     bottom: 0;
     left: 15%;
@@ -285,7 +285,7 @@
     /*    border-top: 2px ;
         border-right: 2px ;
         border-left: 2px ;
-        border-color: #5cb85c;*/
+        border-color: #46b98a;*/
     background-color: transparent;
     transition: all 0.5s ease 0s;
 }
@@ -318,7 +318,7 @@
     /*    border-top: 2px ;
         border-right: 2px ;
         border-left: 2px ;
-        border-color: #5cb85c;*/
+        border-color: #46b98a;*/
     background-color: transparent;
     transition: all 0.5s ease 0s;
 }

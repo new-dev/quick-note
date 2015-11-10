@@ -119,11 +119,11 @@ textarea {
     color: #2DB6CF;
 }
 .n-logo {
-    color: #5cb85c;
+    color: #46b98a;
 }
 
 .green-color {
-    color: #5cb85c;
+    color: #46b98a;
 }
 
 .delete-note-button {
@@ -136,7 +136,7 @@ textarea {
     border-top: 2px ;
     border-right: 2px ;
     border-left: 2px ;
-    border-color: #d9534f;
+    border-color: #E0645C;
     background-color: transparent;
 }
 .delete-note-button:hover{
@@ -153,7 +153,7 @@ textarea {
     border-top: 2px ;
     border-right: 2px ;
     border-left: 2px ;
-    border-color: #5cb85c;
+    border-color: #46b98a;
     background-color: transparent;
 }
 .edit-note-button:hover {
