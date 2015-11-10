@@ -29,17 +29,17 @@
   <span id="note-list" class="display-nothing">
       <div id="all-notes" ng-repeat="notes in noteList track by $index" ng-class="show-button" data-ng-mouseenter="hoverIn()" ng-mouseleave="hoverOut()">
           <div class="note-date">{{notes.date.toString()}}</div>
-          <span class="btn btn-xs btn-default open-note-button animated fadeIn" data-ng-click="loadUrl(notes.url)" ng-show="hoverEdit"
+          <span class="open-note-button btn animated fadeIn" data-ng-click="loadUrl(notes.url)" ng-show="hoverEdit"
                 title="Open Url">
               <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>
           </span>
-          <span class="btn btn-xs btn-default delete-note-button animated fadeIn" ng-show="hoverEdit" data-ng-click="deleteNote($index)"
+          <span class="edit-note-button btn animated fadeIn"  ng-show="hoverEdit" data-ng-click="enableEdit ? nonEditable() : editable(); !enableEdit ? editNote($index) : focusOnEdit($index)"
+                title="{{enableEdit ? 'Save Note' : 'Edit Note'}}">
+              <span class="glyphicon" ng-class="!enableEdit ? 'glyphicon-pencil' : 'glyphicon-save green-color'" aria-hidden="true"></span>
+          </span>
+          <span class="delete-note-button btn animated fadeIn" ng-show="hoverEdit" data-ng-click="deleteNote($index)"
                 title="Delete Note">
               <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-          </span>
-           <span class="btn btn-xs btn-default edit-note-button animated fadeIn"  ng-show="hoverEdit" data-ng-click="enableEdit ? nonEditable() : editable(); !enableEdit ? editNote($index) : focusOnEdit($index)"
-                 title="{{enableEdit ? 'Save Note' : 'Edit Note'}}">
-              <span class="glyphicon" ng-class="!enableEdit ? 'glyphicon-pencil' : 'glyphicon-save green-color'" aria-hidden="true"></span>
           </span>
           <div class="note-text" contenteditable="{{enableEdit==undefined?false :enableEdit}}" id="{{'text'+$index}}" ng-class="hoverEdit ? 'text-top-margin' : 'note-text'">{{notes.noteText.toString()}}</div>
       </div>
@@ -47,7 +47,7 @@
   <span id="view-note" class="display-nothing">
       It is viewing note
   </span>
-<span class="animated fadeIn clickable-logo" data-ng-click="viewCreateNote()" style="-webkit-animation-duration: 3s" title="Take a new note">
+<span class="animated fadeIn clickable-logo" data-ng-click="viewCreateNote()" style="-webkit-animation-duration: 1.5s" title="Take a new note">
     <span class="q-logo" >Q</span><span class="logo-text">uik</span><span class="n-logo">N</span><span class='logo-text'>ote</span>
 </span>
 </body>

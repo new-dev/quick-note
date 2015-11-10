@@ -90,7 +90,7 @@ textarea {
             cursor: default;
         }*/
 .text-top-margin {
-    margin-top: -28px;
+    margin-top: -31px;
     word-wrap: break-word;
     white-space: pre-wrap;
 }
@@ -125,57 +125,10 @@ textarea {
 .green-color {
     color: #46b98a;
 }
-
-.delete-note-button {
-    position: relative;
-    top: 25px;
-    left: 315px;
-    width: 27px;/*
-    border-radius: 1px;
-    border-color: rgba(12,12,12,.1);*/
-    border-top: 2px ;
-    border-right: 2px ;
-    border-left: 2px ;
-    border-color: #E0645C;
-    background-color: transparent;
-}
-.delete-note-button:hover{
-    background-color: rgba(217,83,79,.1);
-}
-.edit-note-button {
-    position: relative;
-    top: 25px;
-    left: 248px;
-    width: 27px;/*
-    border-radius: 1px;
-    border-color: rgba(12,12,12,.1);*/
-    /*box-shadow: 0 0 1px #FF0000;*/
-    border-top: 2px ;
-    border-right: 2px ;
-    border-left: 2px ;
-    border-color: #46b98a;
-    background-color: transparent;
-}
-.edit-note-button:hover {
-    background-color: rgba(92,184,92,.1);
-}
-.open-note-button {
-    position: relative;
-    top: 25px;
-    left: 276px;
-    width: 27px;/*
-    border-radius: 1px;
-    border-color: rgba(12,12,12,.1);*/
-    border-top: 2px ;
-    border-right: 2px ;
-    border-left: 2px ;
-    border-color: #2DB6CF;
-    background-color: transparent;
-}
 .clickable-logo {
     /*text-shadow: .02em .02em #505050;*/
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 400;
     letter-spacing: .24em;
     cursor: pointer;
     margin-left: 5px;
@@ -184,14 +137,6 @@ textarea {
 .clickable-logo:hover {
     letter-spacing: .3em;
     transition: all .3s;
-}
-.open-note-button:hover {
-    background-color: rgba(45,182,207,.1);
-}
-.open-note-button,
-.delete-note-button,
-.edit-note-button {
-    -webkit-animation-duration: .5s
 }
 #all-notes:hover + .delete-note-button {
     display: none;
