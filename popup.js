@@ -43,7 +43,6 @@ app.controller('appCtrl', function($scope, $q){
     $scope.viewAll = function() {
       $scope.loadNotes().then(function(data) {
         $scope.noteList = data;
-        console.log($scope.noteList);
       });
       displayNoteList();
     };
@@ -94,16 +93,12 @@ app.controller('appCtrl', function($scope, $q){
     };
 
     $scope.editNote = function(index) {
-      console.log("edited note");
       var editedNoteData = $scope.deleteNote(index);
-      console.log(editedNoteData);
-      console.log(editedNoteData[0]);
       editedNoteData[0].noteText = document.getElementById("text"+index).innerText;
 
       document.getElementById("text"+index).innerText = editedNoteData[0].noteText;
       $scope.noteList.unshift(editedNoteData[0]);
 
-      console.log(document.getElementById("text"+index).innerText);
       chrome.storage.sync.get(function(storedNotes) {
         storedNotes.data = $scope.noteList;
         chrome.storage.sync.set(storedNotes, function() {
