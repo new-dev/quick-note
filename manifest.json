@@ -3,7 +3,7 @@
 
   "name": "QuikNote",
   "description": "QuikNote is an extension that allows you to take a note while capturing the current url. View QuikNotes wherever! QuikNotes will be stored in the cloud with your Google account.",
-  "version": "0.0.1",
+  "version": "0.0.2",
 
   "browser_action": {
     "default_icon": "icon.png",
