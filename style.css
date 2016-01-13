@@ -72,12 +72,12 @@ textarea {
     border-color: transparent;
 }
 
-.selectable {
-    cursor: pointer;
-}
-
 .not-selectable {
     cursor: not-allowed;
+}
+
+.selectable {
+    cursor: pointer;
 }
 
 .note-text {
