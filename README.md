@@ -6,5 +6,5 @@ This project was part of a code-day hackathon 2015.
 
 #Developers:
 
-#####Timothy Jensen
-#####Alexander Tappin
+#####[Timothy Jensen](https://github.com/timothyjamesjensen)
+#####[Alexander Tappin](https://github.com/alextappin)
