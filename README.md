@@ -1,8 +1,8 @@
-# quick-note
-We are creating a chrome-extension for taking quick notes during browsing.
-This project is part of a code-day hackathon.
+# QuikNote
+####We are developing a chrome-extension for taking quick notes while browsing
+This project was part of a code-day hackathon 2015.
 
-Developers:
+#Developers:
 
-Timothy Jensen
-Alexander Tappin
+#####Timothy Jensen
+#####Alexander Tappin
