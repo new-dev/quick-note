@@ -51,6 +51,10 @@ app.controller('appCtrl', function($scope, $q){
       displayCreateNote();
     };
 
+    $scope.noteIsSaveable = function() {
+      return document.getElementById("note-area").innerText;
+    };
+
     $scope.saveNote = function() {
       var noteText = document.getElementById("note-area").innerText;
       var currentDate = getCurrentDate();
