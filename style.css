@@ -71,6 +71,15 @@ textarea {
     opacity: .9;
     border-color: transparent;
 }
+
+.selectable {
+    cursor: pointer;
+}
+
+.not-selectable {
+    cursor: not-allowed;
+}
+
 .note-text {
     word-wrap: break-word;
     white-space: pre-wrap;

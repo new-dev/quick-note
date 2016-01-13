@@ -22,7 +22,7 @@
       <div id="buttons">
         <span id="all-button" class="view-all-homepage-button btn animated fadeInLeft" data-ng-click="viewAll()" title="Show List of All Notes">View All</span>
         <span id="cancel-button" class="cancel-button-homepage btn animated zoomIn" data-ng-click="cancel()" title="Delete Note and Exit">Cancel</span>
-        <span id="save-button" class="save-button-homepage btn animated fadeInRight" data-ng-click="saveNote()" title="Save Note and Url">Save</span>
+        <span id="save-button" class="save-button-homepage btn animated fadeInRight" data-ng-click="noteIsSaveable() ? saveNote() : break" ng-class="noteIsSaveable() ? 'selectable' : 'not-selectable'" title="Save Note and Url">Save</span>
       </div>
     </div>
       </span>
