@@ -27,7 +27,7 @@
     </div>
       </span>
   <span id="note-list" class="display-nothing">
-      <div class="search-bar">
+      <div class="search-bar" style="position:fixed">
           <input ng-model="query" type="text" placeholder="Filter by" autofocus>
       </div>
       <div id="all-notes" ng-repeat="notes in noteList | filter:query track by $index" ng-class="show-button" data-ng-mouseenter="hoverIn()" ng-mouseleave="hoverOut()">
