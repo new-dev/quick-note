@@ -51,7 +51,7 @@ app.controller('appCtrl', function($scope, $q){
       displayCreateNote();
     };
 
-    $scope.noteIsSaveable = function() {
+    $scope.noteIsSavable = function() {
       return document.getElementById("note-area").innerText;
     };
 
