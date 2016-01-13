@@ -1,17 +1,11 @@
-
 body {
     font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
     border-color: transparent;
-    /*-webkit-font-smoothing: subpixel-antialiased;*/
     font-size: 100%;
     word-wrap: break-word;
     min-width: 400px;
 }
 #note-div {
-    /* avoid an excessively wide status text */
-    /*white-space: pre;
-    text-overflow: ellipsis;
-    *//*overflow: hidden;*/
     width: 400px;
     background: linear-gradient(rgba(250,250,250,.5),rgba(255,255,255,.5)); /* Standard syntax */
 }
@@ -77,31 +71,25 @@ textarea {
     opacity: .9;
     border-color: transparent;
 }
+
+.not-selectable {
+    cursor: not-allowed;
+}
+
+.selectable {
+    cursor: pointer;
+}
+
 .note-text {
     word-wrap: break-word;
     white-space: pre-wrap;
 }
-/*        .note-text::first-letter {
-            font-size: 20px;
-            font-weight: 500;
-            letter-spacing: .01em;
-            text-transform: uppercase;
-            color: #515151;
-            cursor: default;
-        }*/
+
 .text-top-margin {
     margin-top: -31px;
     word-wrap: break-word;
     white-space: pre-wrap;
 }
-/*        .text-top-margin::first-letter {
-            font-size: 20px;
-            font-weight: 500;
-            letter-spacing: .01em;
-            text-transform: uppercase;
-            color: #515151;
-            cursor: default;
-        }*/
 .note-date {
     float:right;
     width: 110px;
@@ -126,7 +114,6 @@ textarea {
     color: #46b98a;
 }
 .clickable-logo {
-    /*text-shadow: .02em .02em #505050;*/
     font-size: 14px;
     font-weight: 400;
     letter-spacing: .24em;
@@ -151,7 +138,7 @@ textarea {
 ::-webkit-scrollbar-track {
     background:#eee;
     border: thin solid lightgray;
-    box-shadow: 0px 0px 3px #dfdfdf inset;
+    box-shadow: 0 0 3px #dfdfdf inset;
     border-radius:10px;
 }
 ::-webkit-scrollbar-thumb {
