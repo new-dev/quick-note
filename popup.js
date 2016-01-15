@@ -23,7 +23,7 @@ app.controller('appCtrl', function($scope, $q){
     document.getElementById("note-area").focus();
 
     $scope.loadUrl = function(url) {
-      chrome.tabs.update({url: url});
+      chrome.tabs.create({url: url});
     };
 
     $scope.loadNotes = function() {
