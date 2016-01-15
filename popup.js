@@ -19,6 +19,10 @@ app.controller('appCtrl', function($scope, $q){
     this.enableEdit = false;
   };
 
+  $scope.returnUrlTooltip = function(url) {
+    return url.length > 33 ? ("Open " + url).substring(0,37) + '...' : "Open " + url;
+  };
+
   getCurrentTabUrl(function(url) {
     document.getElementById("note-area").focus();
 

@@ -27,10 +27,10 @@
     </div>
       </span>
   <span id="note-list" class="display-nothing">
-      <div id="all-notes" ng-repeat="notes in noteList track by $index" ng-class="show-button" data-ng-mouseenter="hoverIn()" ng-mouseleave="hoverOut()" title="{{notes.url}}">
+      <div id="all-notes" ng-repeat="notes in noteList track by $index" ng-class="show-button" data-ng-mouseenter="hoverIn()" ng-mouseleave="hoverOut()">
           <div class="note-date">{{notes.date.toString()}}</div>
           <span class="open-note-button btn animated fadeIn" data-ng-click="loadUrl(notes.url)" ng-show="hoverEdit"
-                title="Open Url">
+                title="{{returnUrlTooltip(notes.url)}}">
               <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>
           </span>
           <span class="edit-note-button btn animated fadeIn"  ng-show="hoverEdit" data-ng-click="enableEdit ? nonEditable() : editable(); !enableEdit ? editNote($index) : focusOnEdit($index)"
