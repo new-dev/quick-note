@@ -22,8 +22,11 @@ app.controller('appCtrl', function($scope, $q){
   getCurrentTabUrl(function(url) {
     document.getElementById("note-area").focus();
 
-    $scope.loadUrl = function(url) {
-      chrome.tabs.update({url: url});
+    $scope.loadUrl = function(url, event) {
+      if (event.ctrlKey)
+        chrome.tabs.create(null,{url: url});
+      else
+        chrome.tabs.update(null,{url: url});
     };
 
     $scope.loadNotes = function() {
