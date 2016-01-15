@@ -184,6 +184,7 @@
 .open-note-button,
 .delete-note-button,
 .edit-note-button {
+    color: black;
     font-size: 11px;
     position: relative;
     top: 25px;

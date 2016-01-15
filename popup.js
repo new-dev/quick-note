@@ -23,9 +23,8 @@ app.controller('appCtrl', function($scope, $q){
     document.getElementById("note-area").focus();
 
     $scope.loadUrl = function(url, event) {
-      if (event.ctrlKey)
-        chrome.tabs.create({url: url});
-      else
+      //dont do anything if the ctrl key is pressed since the <a> link will work regardless
+      if (!event.ctrlKey)
         chrome.tabs.update(null,{url: url});
     };
 
