@@ -24,7 +24,7 @@ app.controller('appCtrl', function($scope, $q){
 
     $scope.loadUrl = function(url, event) {
       if (event.ctrlKey)
-        chrome.tabs.create(null,{url: url});
+        chrome.tabs.create({url: url});
       else
         chrome.tabs.update(null,{url: url});
     };
