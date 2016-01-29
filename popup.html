@@ -30,7 +30,7 @@
       <div id="all-notes" ng-repeat="notes in noteList track by $index" ng-class="show-button" data-ng-mouseenter="hoverIn()" ng-mouseleave="hoverOut()">
           <div class="note-date">{{notes.date.toString()}}</div>
           <a class="open-note-button btn animated fadeIn" ng-href="{{notes.url}}" data-ng-click="loadUrl(notes.url, $event)" ng-show="hoverEdit"
-                title="Open Url">
+                title="{{returnUrlTooltip(notes.url)}}">
               <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>
           </a>
           <span class="edit-note-button btn animated fadeIn"  ng-show="hoverEdit" data-ng-click="enableEdit ? nonEditable() : editable(); !enableEdit ? editNote($index) : focusOnEdit($index)"
