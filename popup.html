@@ -22,7 +22,7 @@
       <div id="buttons">
         <span id="all-button" class="view-all-homepage-button btn animated fadeInLeft" data-ng-click="viewAll()" title="Show List of All Notes">View All</span>
         <span id="cancel-button" class="cancel-button-homepage btn animated zoomIn" data-ng-click="cancel()" title="Delete Note and Exit">Cancel</span>
-        <span id="save-button" class="save-button-homepage btn animated fadeInRight" data-ng-click="saveNote()" title="Save Note and Url">Save</span>
+        <span id="save-button" class="save-button-homepage btn animated fadeInRight" data-ng-click="noteIsSavable() ? saveNote() : null" ng-class="{'not-selectable': !noteIsSavable()}" ng-mouseover="noteIsSavable()" title="Save Note and Url">Save</span>
       </div>
     </div>
       </span>
@@ -32,10 +32,10 @@
       </div>
       <div id="all-notes" ng-repeat="notes in noteList | filter:query track by $index" ng-class="show-button" data-ng-mouseenter="hoverIn()" ng-mouseleave="hoverOut()">
           <div class="note-date">{{notes.date.toString()}}</div>
-          <span class="open-note-button btn animated fadeIn" data-ng-click="loadUrl(notes.url)" ng-show="hoverEdit"
-                title="Open Url">
+          <a class="open-note-button btn animated fadeIn" ng-href="{{notes.url}}" data-ng-click="loadUrl(notes.url, $event)" ng-show="hoverEdit"
+                title="{{returnUrlTooltip(notes.url)}}">
               <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>
-          </span>
+          </a>
           <span class="edit-note-button btn animated fadeIn"  ng-show="hoverEdit" data-ng-click="enableEdit ? nonEditable() : editable(); !enableEdit ? editNote($index) : focusOnEdit($index)"
                 title="{{enableEdit ? 'Save Note' : 'Edit Note'}}">
               <span class="glyphicon" ng-class="!enableEdit ? 'glyphicon-pencil' : 'glyphicon-save green-color'" aria-hidden="true"></span>

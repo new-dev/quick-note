@@ -19,11 +19,17 @@ app.controller('appCtrl', function($scope, $q){
     this.enableEdit = false;
   };
 
+  $scope.returnUrlTooltip = function(url) {
+    return url.length > 33 ? ("Open " + url).substring(0,37) + '...' : "Open " + url;
+  };
+
   getCurrentTabUrl(function(url) {
     document.getElementById("note-area").focus();
 
-    $scope.loadUrl = function(url) {
-      chrome.tabs.update({url: url});
+    $scope.loadUrl = function(url, event) {
+      //dont do anything if the ctrl key is pressed since the <a> link will work regardless
+      if (!event.ctrlKey)
+        chrome.tabs.update(null,{url: url});
     };
 
     $scope.loadNotes = function() {
@@ -49,6 +55,10 @@ app.controller('appCtrl', function($scope, $q){
 
     $scope.viewCreateNote = function() {
       displayCreateNote();
+    };
+
+    $scope.noteIsSavable = function() {
+      return document.getElementById("note-area").innerText;
     };
 
     $scope.saveNote = function() {
