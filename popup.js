@@ -27,8 +27,8 @@ app.controller('appCtrl', function($scope, $q){
     document.getElementById("note-area").focus();
 
     $scope.loadUrl = function(url, event) {
-      //dont do anything if the ctrl key is pressed since the <a> link will work regardless
-      if (!event.ctrlKey)
+      //if the middle button is not pushed (middle button returns 1) and the control key isnt pushed.
+      if (event.button !== 1 && !event.ctrlKey)
         chrome.tabs.update(null,{url: url});
     };
 
