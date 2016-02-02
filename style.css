@@ -131,14 +131,13 @@ textarea {
     display: none;
 }
 
-#search-bar-container {
+#top-bar-container {
     position: fixed;
     height: 30px;
     width: 100%;
     padding: 5px 15px 1px 5px;
     margin-right: 5px;
     margin-bottom: 5px;
-    text-align: right;
     background-color: white;
 }
 
@@ -174,6 +173,12 @@ textarea {
     top: 13px;
     font-size: 9px;
     color: #a1a1a1;
+}
+
+#top-bar-container .clickable-logo {
+    padding-top: 5px;
+    padding-left: 4px;
+    font-size: 11px;
 }
 
 ::-webkit-scrollbar {
