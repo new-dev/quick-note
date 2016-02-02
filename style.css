@@ -42,13 +42,16 @@ textarea {
     -webkit-animation-duration: .7s
 }
 
+#all-notes-container {
+    padding-top: 50px;
+}
+
 #all-notes {
     width: 400px;
     background: linear-gradient(rgba(253,253,253,.5),rgba(255,255,255,.5)); /* Standard syntax */
     font-size: 17px;
     line-height: 1.7;
-    padding: 2px 15px 0 15px;
-    padding-bottom: 20px;
+    padding: 5px 15px 10px 15px;
     outline: none;
     overflow: auto;
     min-height: 150px;
@@ -114,6 +117,9 @@ textarea {
     color: #46b98a;
 }
 .clickable-logo {
+    display: inline-block;
+    min-height: 40px;
+    padding-top: 10px;
     font-size: 14px;
     font-weight: 400;
     letter-spacing: .24em;
@@ -128,6 +134,59 @@ textarea {
 #all-notes:hover + .delete-note-button {
     display: none;
 }
+
+#top-bar-container {
+    position: fixed;
+    height: 30px;
+    width: 100%;
+    padding: 5px 15px 1px 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    background-color: white;
+    z-index: 9999;
+}
+
+#search-bar {
+    height: 25px;
+    width: 120px;
+    padding: 0 0 0 20px;
+    font-size: 12px;
+    background: #F9F9F9;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #D3D3D3;
+    color: #a1a1a1;
+    border-radius: 2px;
+    outline: none;
+}
+
+#search-bar:focus {
+    height: 25px;
+    width: 120px;
+    padding: 0 0 0 20px;
+    font-size: 12px;
+    background: #F6F6F6;
+    border: none;
+    color: #a1a1a1;
+    border-radius: 2px;
+    outline: none;
+}
+
+#search-bar-icon {
+    position: absolute;
+    left: 270px;
+    top: 13px;
+    font-size: 9px;
+    color: #a1a1a1;
+}
+
+#top-bar-container .clickable-logo {
+    min-height: 0;
+    padding-top: 5px;
+    padding-left: 4px;
+    font-size: 11px;
+}
+
 ::-webkit-scrollbar {
     width: 8px;
 }

@@ -15,40 +15,49 @@
     <script src="popup.js"></script>
 </head>
 <body ng-controller="appCtrl">
-<span id="new-note">
-    <div id="note-div">
-        <div contentEditable=true id="note-area">
+<!--FIRST SCREEN UPON CLICKING-->
+    <span id="new-note">
+        <div id="note-div">
+            <div contentEditable=true id="note-area"></div>
+            <div id="buttons">
+                <span id="all-button" class="view-all-homepage-button btn animated fadeInLeft" data-ng-click="viewAll()" title="Show List of All Notes">View All</span>
+                <span id="cancel-button" class="cancel-button-homepage btn animated zoomIn" data-ng-click="cancel()" title="Delete Note and Exit">Cancel</span>
+                <span id="save-button" class="save-button-homepage btn animated fadeInRight" data-ng-click="noteIsSavable() ? saveNote() : null" ng-class="{'not-selectable': !noteIsSavable()}" ng-mouseover="noteIsSavable()" title="Save Note and Url">Save</span>
+            </div>
         </div>
-      <div id="buttons">
-        <span id="all-button" class="view-all-homepage-button btn animated fadeInLeft" data-ng-click="viewAll()" title="Show List of All Notes">View All</span>
-        <span id="cancel-button" class="cancel-button-homepage btn animated zoomIn" data-ng-click="cancel()" title="Delete Note and Exit">Cancel</span>
-        <span id="save-button" class="save-button-homepage btn animated fadeInRight" data-ng-click="noteIsSavable() ? saveNote() : null" ng-class="{'not-selectable': !noteIsSavable()}" ng-mouseover="noteIsSavable()" title="Save Note and Url">Save</span>
-      </div>
-    </div>
-      </span>
+        <span class="animated fadeIn clickable-logo" data-ng-click="viewCreateNote()" style="-webkit-animation-duration: 1.5s" title="Take a new note">
+            <span class="q-logo" >Q</span><span class="logo-text">uik</span><span class="n-logo">N</span><span class='logo-text'>ote</span>
+        </span>
+    </span>
+<!--Screen upon clicking view all-->
   <span id="note-list" class="display-nothing">
-      <div id="all-notes" ng-repeat="notes in noteList track by $index" ng-class="show-button" data-ng-mouseenter="hoverIn()" ng-mouseleave="hoverOut()">
-          <div class="note-date">{{notes.date.toString()}}</div>
-          <a class="open-note-button btn animated fadeIn" ng-href="{{notes.url}}" data-ng-click="loadUrl(notes.url, $event)" ng-show="hoverEdit"
-                title="{{returnUrlTooltip(notes.url)}}">
-              <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>
-          </a>
-          <span class="edit-note-button btn animated fadeIn"  ng-show="hoverEdit" data-ng-click="enableEdit ? nonEditable() : editable(); !enableEdit ? editNote($index) : focusOnEdit($index)"
-                title="{{enableEdit ? 'Save Note' : 'Edit Note'}}">
-              <span class="glyphicon" ng-class="!enableEdit ? 'glyphicon-pencil' : 'glyphicon-save green-color'" aria-hidden="true"></span>
+      <div id="top-bar-container">
+          <span class="animated fadeIn clickable-logo" data-ng-click="viewCreateNote()" style="-webkit-animation-duration: 1.5s" title="Take a new note">
+              <span class="q-logo" >Q</span><span class="logo-text">uik</span><span class="n-logo">N</span><span class='logo-text'>ote</span>
           </span>
-          <span class="delete-note-button btn animated fadeIn" ng-show="hoverEdit" data-ng-click="deleteNote($index)"
-                title="Delete Note">
-              <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+          <span id="search-bar-icon" class="glyphicon glyphicon-search"></span>
+          <span class="pull-right">
+              <input id="search-bar" ng-model="query" type="text" placeholder="Search..." autofocus>
           </span>
-          <div class="note-text" contenteditable="{{enableEdit==undefined?false :enableEdit}}" id="{{'text'+$index}}" ng-class="hoverEdit ? 'text-top-margin' : 'note-text'">{{notes.noteText.toString()}}</div>
+      </div>
+      <div id="all-notes-container">
+          <div id="all-notes" ng-repeat="notes in noteList | filter:query track by $index" ng-class="show-button" data-ng-mouseenter="hoverIn()" ng-mouseleave="hoverOut()">
+              <div class="note-date">{{notes.date.toString()}}</div>
+              <a class="open-note-button btn animated fadeIn" ng-href="{{notes.url}}" data-ng-click="loadUrl(notes.url, $event)" ng-show="hoverEdit"
+                    title="{{returnUrlTooltip(notes.url)}}">
+                  <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>
+              </a>
+              <span class="edit-note-button btn animated fadeIn"  ng-show="hoverEdit" data-ng-click="enableEdit ? nonEditable() : editable(); !enableEdit ? editNote($index) : focusOnEdit($index)"
+                    title="{{enableEdit ? 'Save Note' : 'Edit Note'}}">
+                  <span class="glyphicon" ng-class="!enableEdit ? 'glyphicon-pencil' : 'glyphicon-save green-color'" aria-hidden="true"></span>
+              </span>
+              <span class="delete-note-button btn animated fadeIn" ng-show="hoverEdit" data-ng-click="deleteNote($index)"
+                    title="Delete Note">
+                  <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+              </span>
+              <div class="note-text" contenteditable="{{enableEdit==undefined?false :enableEdit}}" id="{{'text'+$index}}" ng-class="hoverEdit ? 'text-top-margin' : 'note-text'">{{notes.noteText.toString()}}</div>
+          </div>
       </div>
   </span>
-  <span id="view-note" class="display-nothing">
-      It is viewing note
-  </span>
-<span class="animated fadeIn clickable-logo" data-ng-click="viewCreateNote()" style="-webkit-animation-duration: 1.5s" title="Take a new note">
-    <span class="q-logo" >Q</span><span class="logo-text">uik</span><span class="n-logo">N</span><span class='logo-text'>ote</span>
-</span>
 </body>
 </html>

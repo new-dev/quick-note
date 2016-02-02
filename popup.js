@@ -20,7 +20,7 @@ app.controller('appCtrl', function($scope, $q){
   };
 
   $scope.returnUrlTooltip = function(url) {
-    return url.length > 33 ? ("Open " + url).substring(0,37) + '...' : "Open " + url;
+    return url.length > 38 ? ("Open " + url).substring(0,42) + '...' : "Open " + url;
   };
 
   getCurrentTabUrl(function(url) {
