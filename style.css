@@ -42,12 +42,16 @@ textarea {
     -webkit-animation-duration: .7s
 }
 
+#all-notes-container {
+    padding-top: 50px;
+}
+
 #all-notes {
     width: 400px;
     background: linear-gradient(rgba(253,253,253,.5),rgba(255,255,255,.5)); /* Standard syntax */
     font-size: 17px;
     line-height: 1.7;
-    padding: 35px 15px 25px 15px;
+    padding: 5px 15px 10px 15px;
     outline: none;
     overflow: auto;
     min-height: 150px;
@@ -139,6 +143,7 @@ textarea {
     margin-right: 5px;
     margin-bottom: 5px;
     background-color: white;
+    z-index: 9999;
 }
 
 #search-bar {
@@ -176,6 +181,7 @@ textarea {
 }
 
 #top-bar-container .clickable-logo {
+    min-height: 0;
     padding-top: 5px;
     padding-left: 4px;
     font-size: 11px;
