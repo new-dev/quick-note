@@ -2,7 +2,7 @@
 
 var app = angular.module('app', []);
 
-app.controller('appCtrl', function($scope, $q){
+app.controller('appCtrl', function($scope, $q, $location){
   $scope.hoverIn = function() {
     this.hoverEdit = true;
   };
@@ -33,6 +33,7 @@ app.controller('appCtrl', function($scope, $q){
     };
 
     $scope.loadNotes = function() {
+      $scope.getTabUrl();
       var deferred = $q.defer();
       chrome.storage.sync.get(function(storedNotes) {
           if (!chrome.runtime.error) {
@@ -68,7 +69,8 @@ app.controller('appCtrl', function($scope, $q){
       var newNoteData = {
         noteText: noteText,
         url: url,
-        date: currentDate
+        date: currentDate,
+        title: "title"
       };
 
       chrome.storage.sync.get(function(storedNotes) {
@@ -127,6 +129,10 @@ app.controller('appCtrl', function($scope, $q){
 
     };
 
+    $scope.getTabUrl = function() {
+      console.log($location.path());
+  }
+
   });
 });
 
@@ -176,8 +182,9 @@ function getCurrentTabUrl(callback) {
 
   chrome.tabs.query(queryInfo, function(tabs) {
     var tab = tabs[0];
-
     var url = tab.url;
+    var title = tab.title;
+    console.log(title);
     console.assert(typeof url == 'string', 'tab.url should be a string');
 
     callback(url);
