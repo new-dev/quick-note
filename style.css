@@ -16,7 +16,7 @@ body {
     border: none;
     margin-bottom: 20px;
     outline: none;
-    min-height: 200px;
+    min-height: 210px;
     overflow:hidden;
 }
 textarea {
@@ -33,7 +33,7 @@ textarea {
 }
 
 #buttons {
-    padding: 10px 15px 10px 15px;
+    padding: 10px 15px 15px 15px;
     text-align: center;
 }
 #all-button,
@@ -126,6 +126,7 @@ textarea {
     cursor: pointer;
     margin-left: 5px;
     transition: all .2s;
+    -webkit-animation-duration: 1.5s;
 }
 .clickable-logo:hover {
     letter-spacing: .3em;

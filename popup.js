@@ -1,6 +1,8 @@
 // Copyright (c) 2015 Timothy Jensen & Alexander Tappin. All rights reserved.
 
-var app = angular.module('app', []);
+var app = angular.module('app', [
+    '720kb.tooltips'
+]);
 
 app.controller('appCtrl', function($scope, $q){
   $scope.hoverIn = function() {

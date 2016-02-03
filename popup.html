@@ -8,10 +8,12 @@
 <head>
     <title>Quik Note</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+    <link href="angular-tooltips.min.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="animate.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="buttons.css">
     <script src="angular.min.js"></script>
+    <script src="angular-tooltips.min.js"></script>
     <script src="popup.js"></script>
 </head>
 <body ng-controller="appCtrl">
@@ -20,19 +22,19 @@
         <div id="note-div">
             <div contentEditable=true id="note-area"></div>
             <div id="buttons">
-                <span id="all-button" class="view-all-homepage-button btn animated fadeInLeft" data-ng-click="viewAll()" title="Show List of All Notes">View All</span>
-                <span id="cancel-button" class="cancel-button-homepage btn animated zoomIn" data-ng-click="cancel()" title="Delete Note and Exit">Cancel</span>
-                <span id="save-button" class="save-button-homepage btn animated fadeInRight" data-ng-click="noteIsSavable() ? saveNote() : null" ng-class="{'not-selectable': !noteIsSavable()}" ng-mouseover="noteIsSavable()" title="Save Note and Url">Save</span>
+                <span id="all-button" class="view-all-homepage-button btn animated fadeInLeft" data-ng-click="viewAll()" tooltips tooltip-side="bottom" tooltip-template="Show List of All Notes">View All</span>
+                <span id="cancel-button" class="cancel-button-homepage btn animated zoomIn" data-ng-click="cancel()" tooltips tooltip-side="bottom" tooltip-template="Delete Note and Exit">Cancel</span>
+                <span id="save-button" class="save-button-homepage btn animated fadeInRight" data-ng-click="noteIsSavable() ? saveNote() : null" ng-class="{'not-selectable': !noteIsSavable()}" ng-mouseover="noteIsSavable()" tooltips tooltip-side="bottom" tooltip-template="Save Note and Url">Save</span>
             </div>
         </div>
-        <span class="animated fadeIn clickable-logo" data-ng-click="viewCreateNote()" style="-webkit-animation-duration: 1.5s" title="Take a new note">
+        <span class="animated fadeIn clickable-logo" data-ng-click="viewCreateNote()" tooltips tooltip-side="top" tooltip-template="Take a new note">
             <span class="q-logo" >Q</span><span class="logo-text">uik</span><span class="n-logo">N</span><span class='logo-text'>ote</span>
         </span>
     </span>
 <!--Screen upon clicking view all-->
   <span id="note-list" class="display-nothing">
       <div id="top-bar-container">
-          <span class="animated fadeIn clickable-logo" data-ng-click="viewCreateNote()" style="-webkit-animation-duration: 1.5s" title="Take a new note">
+          <span class="animated fadeIn clickable-logo" data-ng-click="viewCreateNote()" tooltips tooltip-side="bottom" tooltip-template="Take a new note">
               <span class="q-logo" >Q</span><span class="logo-text">uik</span><span class="n-logo">N</span><span class='logo-text'>ote</span>
           </span>
           <span id="search-bar-icon" class="glyphicon glyphicon-search"></span>
@@ -44,7 +46,7 @@
           <div id="all-notes" ng-repeat="notes in noteList | filter:query track by $index" ng-class="show-button" data-ng-mouseenter="hoverIn()" ng-mouseleave="hoverOut()">
               <div class="note-date">{{notes.date.toString()}}</div>
               <a class="open-note-button btn animated fadeIn" ng-href="{{notes.url}}" data-ng-click="loadUrl(notes.url, $event)" ng-show="hoverEdit"
-                    title="{{returnUrlTooltip(notes.url)}}">
+                 title="{{returnUrlTooltip(notes.url)}}">
                   <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>
               </a>
               <span class="edit-note-button btn animated fadeIn"  ng-show="hoverEdit" data-ng-click="enableEdit ? nonEditable() : editable(); !enableEdit ? editNote($index) : focusOnEdit($index)"
