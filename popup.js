@@ -23,7 +23,7 @@ app.controller('appCtrl', function($scope, $q, $location){
     return url.length > 38 ? ("Open " + url).substring(0,42) + '...' : "Open " + url;
   };
 
-  getCurrentTabUrl(function(tabInfo) {
+  getCurrentTabInfo(function(tabInfo) {
     document.getElementById("note-area").focus();
 
     $scope.loadUrl = function(url, event) {
@@ -169,7 +169,7 @@ function getCurrentDate() {
   return today;
 }
 
-function getCurrentTabUrl(callback) {
+function getCurrentTabInfo(callback) {
   var queryInfo = {
     active: true,
     currentWindow: true
