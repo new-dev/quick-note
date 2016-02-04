@@ -23,7 +23,7 @@ app.controller('appCtrl', function($scope, $q, $location){
     return url.length > 38 ? ("Open " + url).substring(0,42) + '...' : "Open " + url;
   };
 
-  getCurrentTabUrl(function(url) {
+  getCurrentTabUrl(function(tabInfo) {
     document.getElementById("note-area").focus();
 
     $scope.loadUrl = function(url, event) {
@@ -67,7 +67,7 @@ app.controller('appCtrl', function($scope, $q, $location){
 
       var newNoteData = {
         noteText: noteText,
-        url: url,
+        url: tabInfo.url,
         date: currentDate,
         title: "title"
       };
@@ -187,6 +187,6 @@ function getCurrentTabUrl(callback) {
     console.log(tabInfo.url);
     console.assert(typeof tabInfo.url == 'string', 'tab.url should be a string');
 
-    callback(tabInfo.url);
+    callback(tabInfo);
   });
 }
