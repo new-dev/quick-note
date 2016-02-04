@@ -33,7 +33,6 @@ app.controller('appCtrl', function($scope, $q, $location){
     };
 
     $scope.loadNotes = function() {
-      $scope.getTabUrl();
       var deferred = $q.defer();
       chrome.storage.sync.get(function(storedNotes) {
           if (!chrome.runtime.error) {
@@ -129,10 +128,6 @@ app.controller('appCtrl', function($scope, $q, $location){
 
     };
 
-    $scope.getTabUrl = function() {
-      console.log($location.path());
-  }
-
   });
 });
 
@@ -182,11 +177,16 @@ function getCurrentTabUrl(callback) {
 
   chrome.tabs.query(queryInfo, function(tabs) {
     var tab = tabs[0];
-    var url = tab.url;
-    var title = tab.title;
-    console.log(title);
-    console.assert(typeof url == 'string', 'tab.url should be a string');
 
-    callback(url);
+    var tabInfo = {
+      url: tab.url,
+      title: tab.title
+    };
+
+    console.log(tabInfo.title);
+    console.log(tabInfo.url);
+    console.assert(typeof tabInfo.url == 'string', 'tab.url should be a string');
+
+    callback(tabInfo.url);
   });
 }
