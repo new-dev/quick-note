@@ -183,8 +183,6 @@ function getCurrentTabInfo(callback) {
       title: tab.title
     };
 
-    console.log(tabInfo.title);
-    console.log(tabInfo.url);
     console.assert(typeof tabInfo.url == 'string', 'tab.url should be a string');
 
     callback(tabInfo);
