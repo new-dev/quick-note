@@ -69,7 +69,7 @@ app.controller('appCtrl', function($scope, $q, $location){
         noteText: noteText,
         url: tabInfo.url,
         date: currentDate,
-        title: "title"
+        title: tabInfo.title
       };
 
       chrome.storage.sync.get(function(storedNotes) {
