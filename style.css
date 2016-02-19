@@ -91,12 +91,12 @@ textarea {
 }
 
 .title-text {
-    letter-spacing: 2px;
+    color: #a5a5a5;
+    letter-spacing: 3px;
     font-weight: 400;
     text-align: left;
     margin-left: -6px;
     margin-bottom: 5px;
-    font-style: oblique;
     word-wrap: break-word;
     white-space: pre-wrap;
 }
@@ -109,10 +109,10 @@ textarea {
 
 .text-top-margin {
     margin-top: -29px;
-    letter-spacing: 2px;
+    color: #a5a5a5;
+    letter-spacing: 3px;
     font-weight: 400;
     text-align: left;
-    font-style: oblique;
     margin-left: -6px;
     margin-bottom: 5px;
     word-wrap: break-word;
