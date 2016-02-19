@@ -93,12 +93,13 @@ textarea {
 .title-text {
     color: #a5a5a5;
     letter-spacing: 3px;
-    font-weight: 400;
+    font-weight: 200;
     text-align: left;
     margin-left: -6px;
     margin-bottom: 5px;
     word-wrap: break-word;
     white-space: pre-wrap;
+    -webkit-animation-duration: 1s
 }
 
 .note-text {
@@ -111,7 +112,7 @@ textarea {
     margin-top: -29px;
     color: #a5a5a5;
     letter-spacing: 3px;
-    font-weight: 400;
+    font-weight: 200;
     text-align: left;
     margin-left: -6px;
     margin-bottom: 5px;
