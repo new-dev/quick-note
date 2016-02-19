@@ -55,8 +55,8 @@
                     title="Delete Note">
                   <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
               </span>
-              <div class="animated fadeIn" ng-class="hoverEdit ? 'text-top-margin' : 'title-text'">{{notes.title}}</div>
-              <div class="note-text" contenteditable="{{enableEdit==undefined?false :enableEdit}}" id="{{'text'+$index}}" >{{notes.noteText.toString()}}</div>
+              <div class="animated fadeInLeft" ng-class="hoverEdit ? 'text-top-margin' : 'title-text'">{{notes.title}}</div>
+              <div class="note-text animated fadeIn" contenteditable="{{enableEdit==undefined?false :enableEdit}}" id="{{'text'+$index}}" >{{notes.noteText.toString()}}</div>
           </div>
       </div>
   </span>

@@ -5,6 +5,7 @@ body {
     word-wrap: break-word;
     min-width: 400px;
 }
+
 #note-div {
     width: 400px;
     background: linear-gradient(rgba(250,250,250,.5),rgba(255,255,255,.5)); /* Standard syntax */
@@ -106,6 +107,7 @@ textarea {
     word-wrap: break-word;
     white-space: pre-wrap;
     margin-left: 5px;
+    -webkit-animation-duration: .7s
 }
 
 .text-top-margin {
@@ -118,6 +120,7 @@ textarea {
     margin-bottom: 5px;
     word-wrap: break-word;
     white-space: pre-wrap;
+    -webkit-animation-duration: 1s
 }
 .note-date {
     float:right;
