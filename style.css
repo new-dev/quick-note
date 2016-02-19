@@ -49,7 +49,7 @@ textarea {
 #all-notes {
     width: 400px;
     background: linear-gradient(rgba(253,253,253,.5),rgba(255,255,255,.5)); /* Standard syntax */
-    font-size: 17px;
+    font-size: 15px;
     line-height: 1.7;
     padding: 5px 15px 10px 15px;
     outline: none;
@@ -58,6 +58,9 @@ textarea {
     border-bottom: solid;
     border-width: 1px;
     border-color: rgba(45,182,207,.2);
+}
+#all-notes:hover {
+    /*background: linear-gradient(rgba(53,253,253,.5),rgba(255,255,255,.5)); /!* Standard syntax *!/*/
 }
 .display-nothing {
     display: none;
@@ -75,6 +78,10 @@ textarea {
     border-color: transparent;
 }
 
+.hovered-background {
+    background: green;
+}
+
 .not-selectable {
     cursor: not-allowed;
 }
@@ -83,13 +90,29 @@ textarea {
     cursor: pointer;
 }
 
-.note-text {
+.title-text {
+    letter-spacing: 2px;
+    font-weight: 400;
+    text-align: left;
+    margin-left: -6px;
+    margin-bottom: 5px;
     word-wrap: break-word;
     white-space: pre-wrap;
 }
 
+.note-text {
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    margin-left: 5px;
+}
+
 .text-top-margin {
-    margin-top: -31px;
+    margin-top: -29px;
+    letter-spacing: 2px;
+    font-weight: 400;
+    text-align: left;
+    margin-left: -6px;
+    margin-bottom: 5px;
     word-wrap: break-word;
     white-space: pre-wrap;
 }
