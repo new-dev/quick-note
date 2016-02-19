@@ -177,10 +177,12 @@ function getCurrentTabInfo(callback) {
 
   chrome.tabs.query(queryInfo, function(tabs) {
     var tab = tabs[0];
-
+    var maxLength = 50; //45 characters
+    var truncatedTitle = tab.title.substr(0, maxLength);
+    truncatedTitle = truncatedTitle.substr(0, Math.min(truncatedTitle.length, truncatedTitle.lastIndexOf(" ")));
     var tabInfo = {
       url: tab.url,
-      title: tab.title
+      title: truncatedTitle
     };
 
     console.assert(typeof tabInfo.url == 'string', 'tab.url should be a string');
