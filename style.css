@@ -96,6 +96,7 @@ textarea {
     text-align: left;
     margin-left: -6px;
     margin-bottom: 5px;
+    font-style: oblique;
     word-wrap: break-word;
     white-space: pre-wrap;
 }
@@ -111,6 +112,7 @@ textarea {
     letter-spacing: 2px;
     font-weight: 400;
     text-align: left;
+    font-style: oblique;
     margin-left: -6px;
     margin-bottom: 5px;
     word-wrap: break-word;
