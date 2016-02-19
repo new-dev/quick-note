@@ -102,6 +102,7 @@
 .open-note-button {
     background-color: transparent;
     transition: all 0.5s ease 0s;
+
 }
 .open-note-button:after {
     content:"";
@@ -112,10 +113,12 @@
     height: .06em;
     width: 75%;
     transition: all 0.5s ease 0s;
+
 }
 .open-note-button:hover {
     background-color: rgba(45,182,207,.1);
     transition: all 0.5s ease 0s;
+
 }
 .open-note-button:hover:after {
     content:"";
@@ -125,10 +128,12 @@
     height: .06em;
     width: 0;
     transition: all 0.5s ease 0s;
+
 }
 .delete-note-button {
     background-color: transparent;
     transition: all 0.5s ease 0s;
+
 }
 .delete-note-button:after {
     content:"";
@@ -139,10 +144,12 @@
     height: .06em;
     width: 75%;
     transition: all 0.5s ease 0s;
+
 }
 .delete-note-button:hover {
     background-color: rgba(217,83,79,.1);
     transition: all 0.5s ease 0s;
+
 }
 .delete-note-button:hover:after {
     content:"";
@@ -152,10 +159,12 @@
     height: .06em;
     width: 0;
     transition: all 0.5s ease 0s;
+
 }
 .edit-note-button {
     background-color: transparent;
     transition: all 0.5s ease 0s;
+
 }
 .edit-note-button:after {
     content:"";
@@ -166,10 +175,12 @@
     height: .06em;
     width: 75%;
     transition: all 0.5s ease 0s;
+
 }
 .edit-note-button:hover {
     background-color: rgba(92,184,92,.1);
     transition: all 0.5s ease 0s;
+
 }
 .edit-note-button:hover:after {
     content:"";
@@ -179,6 +190,7 @@
     height: .06em;
     width: 0;
     transition: all 0.5s ease 0s;
+
 }
 
 .open-note-button,
@@ -191,5 +203,6 @@
     left: 262px;
     width: 35px;
     text-align: center;
-    -webkit-animation-duration: .5s
+    -webkit-animation-duration: .5s;
+    z-index: 99999;
 }
