@@ -31,7 +31,7 @@
     </span>
 <!--Screen upon clicking view all-->
   <span id="note-list" class="display-nothing">
-      <div id="top-bar-container">
+      <div id="top-bar-container" class="animated fadeIn" style="-webkit-animation-duration: 1.5s">
           <span class="animated fadeIn clickable-logo" data-ng-click="viewCreateNote()" style="-webkit-animation-duration: 1.5s" title="Take a new note">
               <span class="q-logo" >Q</span><span class="logo-text">uik</span><span class="n-logo">N</span><span class='logo-text'>ote</span>
           </span>
@@ -55,7 +55,8 @@
                     title="Delete Note">
                   <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
               </span>
-              <div class="note-text" contenteditable="{{enableEdit==undefined?false :enableEdit}}" id="{{'text'+$index}}" ng-class="hoverEdit ? 'text-top-margin' : 'note-text'">{{notes.noteText.toString()}}</div>
+              <div class="animated fadeInLeft" ng-class="hoverEdit ? 'text-top-margin' : 'title-text'">{{notes.title}}</div>
+              <div class="note-text animated fadeIn" contenteditable="{{enableEdit==undefined?false :enableEdit}}" id="{{'text'+$index}}" >{{notes.noteText.toString()}}</div>
           </div>
       </div>
   </span>

@@ -2,7 +2,7 @@
 
 var app = angular.module('app', []);
 
-app.controller('appCtrl', function($scope, $q){
+app.controller('appCtrl', function($scope, $q, $location){
   $scope.hoverIn = function() {
     this.hoverEdit = true;
   };
@@ -23,7 +23,7 @@ app.controller('appCtrl', function($scope, $q){
     return url.length > 38 ? ("Open " + url).substring(0,42) + '...' : "Open " + url;
   };
 
-  getCurrentTabUrl(function(url) {
+  getCurrentTabInfo(function(tabInfo) {
     document.getElementById("note-area").focus();
 
     $scope.loadUrl = function(url, event) {
@@ -67,8 +67,9 @@ app.controller('appCtrl', function($scope, $q){
 
       var newNoteData = {
         noteText: noteText,
-        url: url,
-        date: currentDate
+        url: tabInfo.url,
+        date: currentDate,
+        title: tabInfo.title
       };
 
       chrome.storage.sync.get(function(storedNotes) {
@@ -168,7 +169,7 @@ function getCurrentDate() {
   return today;
 }
 
-function getCurrentTabUrl(callback) {
+function getCurrentTabInfo(callback) {
   var queryInfo = {
     active: true,
     currentWindow: true
@@ -176,10 +177,16 @@ function getCurrentTabUrl(callback) {
 
   chrome.tabs.query(queryInfo, function(tabs) {
     var tab = tabs[0];
+    var maxLength = 50; //45 characters
+    var truncatedTitle = tab.title.substr(0, maxLength);
+    truncatedTitle = truncatedTitle.substr(0, Math.min(truncatedTitle.length, truncatedTitle.lastIndexOf(" ")));
+    var tabInfo = {
+      url: tab.url,
+      title: truncatedTitle
+    };
 
-    var url = tab.url;
-    console.assert(typeof url == 'string', 'tab.url should be a string');
+    console.assert(typeof tabInfo.url == 'string', 'tab.url should be a string');
 
-    callback(url);
+    callback(tabInfo);
   });
 }
