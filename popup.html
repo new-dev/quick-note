@@ -18,7 +18,7 @@
 <!--FIRST SCREEN UPON CLICKING -->
     <span id="new-note">
         <div id="note-div">
-            <div contentEditable=true id="note-area" ng-keyup="$event.keyCode == 13 && $event.shiftKey" ? noteIsSavable() ? saveNote() : null></div>
+            <div contentEditable=true id="note-area" ng-keyup="$event.keyCode == 13 && $event.shiftKey ? noteIsSavable() ? saveNote() : null"></div>
             <div id="buttons">
                 <span id="all-button" class="view-all-homepage-button btn animated fadeInLeft" data-ng-click="viewAll()" title="Show List of All Notes">View All</span>
                 <span id="cancel-button" class="cancel-button-homepage btn animated zoomIn" data-ng-click="cancel()" title="Delete Note and Exit">Cancel</span>
